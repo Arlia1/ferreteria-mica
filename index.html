@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferreteria Mica</title>
+    <link href="src/styles.css" rel="stylesheet">
+    <link rel="icon" href="img/logo.png">
+</head>
+<body class="bg-slate-950">
+    <header class="bg-amber-500 text-white py-8 fixed w-full z-50">
+        <nav class=" fixed top-0 left-0 w-full z-10">
+            <div class="px-4">
+                <div class="flex items-center justify-between h-16 relative">
+                    <div class="flex-shrink-0 pl-1">
+                        <a href="#inicio" class="text-white">
+                            <img src="img/logo.png" alt="Ferreteria Mica" class="w-20 h-20">
+                        </a>
+                    </div>
+                    <div class="flex-1 sm:block hidden items-center content-center">
+                        <div class="ml-10 flex flex-1 w-11/12 text-center">
+                            <a href="#inicio"
+                                class="flex items-center justify-center text-slate-950 hover:bg-amber-400 hover:text-slate-700 px-3 py-2 rounded-md text-md font-medium w-full h-14">Inicio</a>
+                            <a href="#nosotros"
+                                class="flex items-center justify-center text-slate-950 hover:bg-amber-400 hover:text-slate-700 px-3 py-2 rounded-md text-md font-medium w-full h-14">Acerca
+                                de nosotros</a>
+                            <a href="#servicios"
+                                class="flex items-center justify-center text-slate-950 hover:bg-amber-400 hover:text-slate-700 px-3 py-2 rounded-md text-md font-medium w-full h-14">Servicios</a>
+                            <a href="#contacto"
+                                class="flex items-center justify-center text-slate-950 hover:bg-amber-400 hover:text-slate-700 px-3 py-2 rounded-md text-md font-medium w-full h-14">Contactanos</a>
+                        </div>
+                    </div>
+                    <div class="sm:hidden">
+                        <button type="button"
+                            class="text-slate-950 shadow-amber-800 shadow-md hover:bg-amber-400 hover:text-slate-700 px-2 py-2 rounded-md text-md font-medium focus:outline-none"
+                            onclick="toggleMenu()">Menu</button>
+                        <div class="hidden flex-col bg-amber-500 mt-16 fixed top-0 right-0" id="menu-container">
+                            <a href="#inicio"
+                                class="block bg-amber-500 text-slate-950 hover:bg-amber-400 hover:text-slate-500 py-5 w-screen text-md text-center font-medium"
+                                onclick="toggleMenu()">Inicio</a>
+                            <a href="#nosotros"
+                                class="block bg-amber-500 text-slate-950 hover:bg-amber-400 hover:text-slate-500 py-5 w-screen text-md text-center font-medium"
+                                onclick="toggleMenu()">Acerca
+                                de nosotros</a>
+                            <a href="#servicios"
+                                class="block  bg-amber-500 text-slate-950 hover:bg-amber-400 hover:text-slate-500 py-5 w-screen text-md text-center font-medium"
+                                onclick="toggleMenu()">Servicios</a>
+                            <a href="#contacto"
+                                class="block  bg-amber-500 text-slate-950 hover:bg-amber-400 hover:text-slate-500 py-5 w-screen text-md text-center font-medium"
+                                onclick="toggleMenu()">Contáctanos</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+    </header>
+    
+    <main class=" md:mx-auto md:px-4 md:py-8"> 
+
+        <div class="flex justify-center items-center h-screen ">
+            <h1 class="text-4xl font-bold text-orange-800 px-3">¡Bienvenido a Ferreteria Mica!</h1>
+        </div>
+        
+        <div class="grid md:grid-cols-3 grid-cols-1 md:gap-4 aspect-[1/8] md:aspect-[4/3]">
+            <div class="bg-amber-200 bg-[url('../img/Herramientas4.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
+                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center ">Herramientas</h2>
+                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Encuentra las mejores herramientas para tus proyectos de construcción.</p>
+            </div>
+            <div class="bg-amber-200 bg-[url('../img/Materiales_construccion.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
+                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 text-center px-1.5">Materiales de construcción</h2>
+                <p class="text-2xl md:text-2xl text-orange-800 px-2 text-center font-medium">Amplia selección de materiales de construcción de alta calidad.</p>
+            </div>
+            <div class="bg-amber-200 bg-[url('../img/Bulones.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
+                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center">Bulones</h2>
+                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Gran variedad de bulones para tus proyectos de construcción.</p>
+            </div>
+            <div class="bg-amber-200 bg-[url('../img/Oxigeno1.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
+                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center">Oxígeno</h2>
+                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Suministro de oxígeno para soldaduras y otros usos.</p>
+            </div>
+            <div class="bg-amber-200 bg-[url('../img/Sanitarios.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
+                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center">Sanitarios</h2>
+                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Productos sanitarios para baños y cocinas.</p>
+            </div>
+            <div class="bg-amber-200 bg-[url('../img/Pinturas3.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
+                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center">Pinturas</h2>
+                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Amplia gama de pinturas para interiores y exteriores.</p>
+            </div>
+            <div class="bg-amber-200 bg-[url('../img/Electricidad4.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
+                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center">Electricidad</h2>
+                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Productos y materiales eléctricos para tus proyectos.</p>
+            </div>
+            <div class="bg-amber-200 bg-[url('../img/Accesorios3.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
+                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center">Accesorios</h2>
+                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Todo tipo de accesorios para complementar tus proyectos.</p>
+            </div>
+            <div class="bg-amber-200 bg-[url('../img/Jardineria.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
+                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center">Jardinería</h2>
+                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Todo lo que necesitas para tu jardín: Herramientas, macetas y más.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-amber-500 text-white mt-4 py-5">
+        <div class="container mx-auto px-4">
+            <p class="text-center">© 2024 Ferreteria Mica. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+<script src="src/scripts.js"></script>
+</html>
