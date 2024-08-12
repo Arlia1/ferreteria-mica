@@ -1285,6 +1285,16 @@ video {
   background-color: rgb(251 191 36 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-amber-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 211 77 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-amber-500:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-\[length\:110\%\]:hover {
   background-size: 110%;
 }
