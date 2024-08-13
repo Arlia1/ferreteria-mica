@@ -820,6 +820,11 @@ video {
   background-color: rgb(2 6 23 / var(--tw-bg-opacity));
 }
 
+.bg-amber-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 191 36 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'\.\.\/img\/Accesorios3\.jpeg\'\)\] {
   background-image: url('../img/Accesorios3.jpeg');
 }
