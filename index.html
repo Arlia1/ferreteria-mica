@@ -8,8 +8,8 @@
     <link rel="icon" href="img/logo.png">
 </head>
 <body class="bg-slate-950">
-    <header class="bg-amber-500 text-white py-8 fixed w-full z-50">
-        <nav class=" fixed top-0 left-0 w-full z-10">
+    <header class="bg-amber-500 text-white py-8 fixed w-full z-50 shadow-slate-700 shadow-md">
+        <nav class="fixed top-0 left-0 w-full z-10">
             <div class="px-4">
                 <div class="flex items-center justify-between h-16 relative">
                     <div class="flex-shrink-0 pl-1">
@@ -34,7 +34,7 @@
                         <button type="button"
                             class="text-slate-950 shadow-amber-800 shadow-md hover:bg-amber-400 hover:text-slate-700 px-2 py-2 rounded-md text-md font-medium focus:outline-none"
                             onclick="toggleMenu()">Menu</button>
-                        <div class="hidden flex-col bg-amber-600 mt-16 fixed top-0 right-0" id="menu-container">
+                        <div class="hidden flex-col bg-amber-600 mt-16 fixed top-0 right-0 shadow-slate-700 shadow-md" id="menu-container">
                             <a href="#inicio"
                                 class="block bg-amber-600 text-slate-950 hover:bg-amber-500 hover:text-slate-500 py-5 w-screen text-md text-center font-medium"
                                 onclick="toggleMenu()">Inicio</a>
@@ -56,48 +56,36 @@
         
     </header>
     
-    <main class=" md:mx-auto md:px-4 md:py-8"> 
+    <main id="inicio" class=" md:mx-auto md:px-4 md:py-8"> 
 
-        <div class="flex justify-center items-center h-screen ">
-            <h1 class="text-4xl font-bold text-orange-800 px-3">¡Bienvenido a Ferreteria Mica!</h1>
+        <div class="flex justify-center items-center h-[75vh] ">
+            <h1 class="text-4xl font-bold text-orange-800 px-3 text-center">¡Bienvenido a Ferreteria Mica!</h1>
         </div>
         
-        <div class="grid md:grid-cols-3 grid-cols-1 md:gap-4 aspect-[1/8] md:aspect-[4/3]">
-            <div class="bg-amber-200 bg-[url('../img/Herramientas4.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
-                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center ">Herramientas</h2>
-                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Encuentra las mejores herramientas para tus proyectos de construcción.</p>
+        <div class="bg-amber-600 flex justify-center items-center mt-8 h-[75vh] shadow-amber-500 shadow-lg">
+            <div class="text-center px-4">
+                <h2 class="text-3xl font-bold text-white mb-4">Acerca de Nosotros</h2>
+                <p class="text-white text-lg">Ferreteria Mica ofrece soluciones en materiales de construcción y herramientas para el hogar. Con más de 10 años de experiencia, brindamos productos de alta calidad y excelente servicio al cliente.</p>
+                <p class="text-white text-lg">Nuestro objetivo es satisfacer las necesidades de nuestros clientes, ofreciendo una amplia variedad de productos y asesoramiento personalizado.</p>
+                <a href="nosotros/"
+                    class="flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-50 hover:text-slate-150 px-3 py-2 rounded-md text-md font-medium w-full h-14 mt-8 shadow-amber-500 shadow-lg">Ir a Nosotros</a>
             </div>
-            <div class="bg-amber-200 bg-[url('../img/Materiales_construccion.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
-                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 text-center px-1.5">Materiales de construcción</h2>
-                <p class="text-2xl md:text-2xl text-orange-800 px-2 text-center font-medium">Amplia selección de materiales de construcción de alta calidad.</p>
+        </div>
+
+        <div class="flex justify-center items-center mt-8 h-[75vh]">
+            <div class="text-center px-4">
+                <h2 class="text-3xl font-bold text-white mb-4">Nuestros Servicios</h2>
+                <p class="text-white text-lg">En Ferreteria Mica ofrecemos una amplia gama de servicios para satisfacer todas tus necesidades de construcción y reparación. Contamos con productos de alta calidad y personal capacitado para brindarte el mejor asesoramiento. Ya sea que necesites herramientas, materiales de construcción o productos para el hogar, ¡no dudes en consultar!</p>
+                <a href="servicios/" class="flex items-center justify-center bg-amber-600 hover:bg-amber-500 hover:text-slate-700 px-3 py-2 rounded-md text-md font-medium w-full h-14 mt-8 shadow-amber-500 shadow-lg">Ir a Servicios</a>
             </div>
-            <div class="bg-amber-200 bg-[url('../img/Bulones.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
-                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center">Bulones</h2>
-                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Gran variedad de bulones para tus proyectos de construcción.</p>
-            </div>
-            <div class="bg-amber-200 bg-[url('../img/Oxigeno1.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
-                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center">Oxígeno</h2>
-                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Suministro de oxígeno para soldaduras y otros usos.</p>
-            </div>
-            <div class="bg-amber-200 bg-[url('../img/Sanitarios.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
-                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center">Sanitarios</h2>
-                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Productos sanitarios para baños y cocinas.</p>
-            </div>
-            <div class="bg-amber-200 bg-[url('../img/Pinturas3.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
-                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center">Pinturas</h2>
-                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Amplia gama de pinturas para interiores y exteriores.</p>
-            </div>
-            <div class="bg-amber-200 bg-[url('../img/Electricidad4.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
-                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center">Electricidad</h2>
-                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Productos y materiales eléctricos para tus proyectos.</p>
-            </div>
-            <div class="bg-amber-200 bg-[url('../img/Accesorios3.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
-                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center">Accesorios</h2>
-                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Todo tipo de accesorios para complementar tus proyectos.</p>
-            </div>
-            <div class="bg-amber-200 bg-[url('../img/Jardineria.jpeg')] bg-cover bg-center md:p-4  transition-transform duration-10000 hover:bg-[length:110%] hover:scale-105 shadow-slate-500 shadow-2xl flex flex-col justify-center md:justify-between items-center">
-                <h2 class="text-5xl md:text-4xl font-bold mb-2 text-orange-800 px-3 text-center">Jardinería</h2>
-                <p class="text-2xl md:text-2xl text-orange-800 px-3 text-center font-medium">Todo lo que necesitas para tu jardín: Herramientas, macetas y más.</p>
+        </div>
+
+        <div class="bg-amber-600 flex justify-center items-center my-8 h-[75vh]  shadow-amber-500 shadow-lg">
+            <div class="text-center px-4 ">
+                <h2 class="text-3xl font-bold text-white mb-4">Contáctanos</h2>
+                    <p class="text-white text-lg">Aceptamos efectivo, transferencia y débito como formas de pago. Además, ofrecemos envíos en el día.</p>
+                    <p class="text-white text-lg">Si tienes alguna pregunta o consulta, no dudes en contactarnos. Estamos para ayudarte.</p>
+                    <a href="contactanos/" class="flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-50 hover:text-slate-150 px-3 py-2 rounded-md text-md font-medium w-full h-14 mt-8 shadow-amber-500 shadow-lg">Ir a Contáctanos</a>
             </div>
         </div>
     </main>
