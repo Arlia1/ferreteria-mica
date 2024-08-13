@@ -558,6 +558,12 @@ video {
   width: 100%;
 }
 
+@media (min-width: 450px) {
+  .container {
+    max-width: 450px;
+  }
+}
+
 @media (min-width: 640px) {
   .container {
     max-width: 640px;
@@ -650,6 +656,14 @@ video {
   margin-top: 2rem;
 }
 
+.mr-4 {
+  margin-right: 1rem;
+}
+
+.mr-5 {
+  margin-right: 1.25rem;
+}
+
 .block {
   display: block;
 }
@@ -680,6 +694,10 @@ video {
 
 .h-20 {
   height: 5rem;
+}
+
+.h-\[100vh\] {
+  height: 100vh;
 }
 
 .h-\[65vh\] {
@@ -956,15 +974,15 @@ video {
 }
 
 .text-shadow-slate-800 {
-  text-shadow: 1px 2px 3px #1e293b;
+  text-shadow: 1.5px 2px 3px #1e293b;
 }
 
 .text-shadow-amber-50 {
-  text-shadow: 1px 2px 3px #fffbeb;
+  text-shadow: 1.5px 2px 3px #fffbeb;
 }
 
-.text-shadow-amber-200 {
-  text-shadow: 1px 2px 3px #fde68a;
+.text-shadow-double-amber-50-slate-900 {
+  text-shadow: 0 1px 3px #fffbeb, 0 2px 5px #0f172a;
 }
 
 .hover\:scale-105:hover {
@@ -1007,6 +1025,37 @@ video {
   outline-offset: 2px;
 }
 
+@media (min-width: 450px) {
+  .xs\:h-\[75vh\] {
+    height: 75vh;
+  }
+
+  .xs\:w-full {
+    width: 100%;
+  }
+
+  .xs\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .xs\:px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .xs\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  .xs\:hover\:scale-105:hover {
+    --tw-scale-x: 1.05;
+    --tw-scale-y: 1.05;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:block {
     display: block;
@@ -1014,6 +1063,10 @@ video {
 
   .sm\:hidden {
     display: none;
+  }
+
+  .sm\:w-full {
+    width: 100%;
   }
 }
 
@@ -1061,5 +1114,15 @@ video {
   .md\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .md\:hover\:scale-105:hover {
+    --tw-scale-x: 1.05;
+    --tw-scale-y: 1.05;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+
+  .md\:hover\:bg-\[length\:110\%\]:hover {
+    background-size: 110%;
   }
 }
