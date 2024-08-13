@@ -1,3 +1,18 @@
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const target = document.querySelector(this.getAttribute('href'));
+            const offset = target.offsetTop;
+
+            window.scrollTo({
+                top: offset,
+                behavior: 'smooth'
+            });
+        });
+    });
+});
 
 function toggleMenu() {
     const menu = document.getElementById('menu-container');
@@ -19,3 +34,5 @@ function handleClickOutside(event) {
         document.removeEventListener('click', handleClickOutside);
     }
 }
+
+console.log('5910830');
