@@ -731,6 +731,10 @@ video {
   height: 100%;
 }
 
+.h-12 {
+  height: 3rem;
+}
+
 .w-11\/12 {
   width: 91.666667%;
 }
@@ -753,6 +757,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-24 {
+  width: 6rem;
 }
 
 .flex-1 {
