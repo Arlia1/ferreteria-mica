@@ -145,3 +145,36 @@ function handleClickOutside(event) {
         closeMenu();
     }
 }
+
+/**
+ * Handle quick quote submission to WhatsApp
+ */
+function sendQuoteWhatsApp(event) {
+    if (event) event.preventDefault();
+
+    const nameInput = document.getElementById('quote-name');
+    const phoneInput = document.getElementById('quote-phone');
+    const categoryInput = document.getElementById('quote-category');
+    const messageInput = document.getElementById('quote-message');
+
+    const name = nameInput ? nameInput.value.trim() : '';
+    const phone = phoneInput ? phoneInput.value.trim() : '';
+    const category = categoryInput ? categoryInput.value : '';
+    const message = messageInput ? messageInput.value.trim() : '';
+
+    if (!name || !message) {
+        alert('Por favor, ingresá tu nombre y el detalle de tu consulta.');
+        return false;
+    }
+
+    let text = 'Hola Ferretería Mica! Quiero consultar presupuesto / stock:\n\n';
+    text += '• Nombre: ' + name + '\n';
+    if (phone) text += '• Teléfono: ' + phone + '\n';
+    if (category) text += '• Rubro: ' + category + '\n';
+    text += '• Consulta: ' + message;
+
+    const encoded = encodeURIComponent(text);
+    const targetUrl = 'https://wa.me/5491157124625?text=' + encoded;
+    window.open(targetUrl, '_blank', 'noopener,noreferrer');
+    return false;
+}
