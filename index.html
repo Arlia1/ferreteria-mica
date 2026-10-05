@@ -243,10 +243,81 @@
         </section>
     </main>
 
-    <footer class="bg-amber-500 text-white mt-4 py-5">
-        <div class="container mx-auto px-4">
-            <p class="text-center">© 2024 Ferreteria Mica. Todos los derechos reservados.</p>
+    <footer class="bg-slate-900 border-t border-slate-800 text-white mt-16 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Col 1: Brand -->
+                <div class="space-y-4">
+                    <img src="img/logo.png" alt="Ferretería Mica" width="96" height="48" decoding="async" class="w-24 h-12 object-contain">
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Más de 25 años de trayectoria en Quilmes Oeste brindando materiales de construcción, herramientas de calidad y atención profesional.
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <a href="https://wa.me/5491157124625" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-emerald-600 flex items-center justify-center transition text-white" aria-label="WhatsApp">
+                            <img src="img/icons/whatsapp.svg" alt="WhatsApp" width="20" height="20" loading="lazy" class="w-5 h-5">
+                        </a>
+                        <a href="https://www.facebook.com/ferreteriamica" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-blue-600 flex items-center justify-center transition text-white" aria-label="Facebook">
+                            <img src="img/icons/facebook1.svg" alt="Facebook" width="20" height="20" loading="lazy" class="w-5 h-5">
+                        </a>
+                        <a href="https://www.instagram.com/ferreteria_mica" target="_blank" rel="noopener noreferrer" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-pink-600 flex items-center justify-center transition text-white" aria-label="Instagram">
+                            <img src="img/icons/instagram.svg" alt="Instagram" width="20" height="20" loading="lazy" class="w-5 h-5">
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation -->
+                <div>
+                    <h4 class="text-amber-400 font-bold text-base mb-4 uppercase tracking-wider text-xs">Navegación</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="#main-content" class="hover:text-amber-400 transition">Inicio</a></li>
+                        <li><a href="nosotros/" class="hover:text-amber-400 transition">Acerca de nosotros</a></li>
+                        <li><a href="servicios/" class="hover:text-amber-400 transition">Rubros y Servicios</a></li>
+                        <li><a href="contacto/" class="hover:text-amber-400 transition">Contacto y Ubicación</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Rubros -->
+                <div>
+                    <h4 class="text-amber-400 font-bold text-base mb-4 uppercase tracking-wider text-xs">Rubros Principales</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li><a href="servicios/" class="hover:text-amber-400 transition">Herramientas Eléctricas</a></li>
+                        <li><a href="servicios/" class="hover:text-amber-400 transition">Materiales de Construcción</a></li>
+                        <li><a href="servicios/" class="hover:text-amber-400 transition">Bulonería y Tornillería</a></li>
+                        <li><a href="servicios/" class="hover:text-amber-400 transition">Sanitarios y Plomería</a></li>
+                        <li><a href="servicios/" class="hover:text-amber-400 transition">Pinturas e Impermeabilizantes</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contacto y Horarios -->
+                <div>
+                    <h4 class="text-amber-400 font-bold text-base mb-4 uppercase tracking-wider text-xs">Horarios y Ubicación</h4>
+                    <ul class="space-y-2 text-sm text-slate-300">
+                        <li class="flex items-start gap-2">
+                            <span>📍</span>
+                            <span>Av. San Martín 2580, Quilmes Oeste</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span>📞</span>
+                            <a href="tel:+5491157124625" class="hover:text-amber-400 transition">11 5712-4625</a>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span>🕒</span>
+                            <span>Lun a Vie: 8:00 - 13:00 / 14:30 - 19:30<br>Sáb: 9:00 - 19:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-2">
+                <p>© 2026 Ferretería Mica. Todos los derechos reservados.</p>
+                <div class="flex gap-4">
+                    <a href="contacto/" class="hover:text-amber-400 transition">Quilmes Oeste, Buenos Aires</a>
+                    <span>•</span>
+                    <a href="sitemap.xml" class="hover:text-amber-400 transition">Mapa del Sitio</a>
+                </div>
+            </div>
         </div>
+    </footer>
     <!-- Floating WhatsApp Button -->
     <a href="https://wa.me/5491157124625?text=Hola%20Ferreter%C3%ADa%20Mica%2C%20quisiera%20consultar%20por%20un%20producto" target="_blank" rel="noopener noreferrer" class="whatsapp-float whatsapp-pulse" aria-label="Contactar por WhatsApp">
         <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM16.54 14.77C16.34 14.28 15.82 14.04 15.04 13.65C14.26 13.26 14.05 13.11 13.78 13.5C13.51 13.89 13 14.48 12.83 14.68C12.67 14.87 12.5 14.89 12.23 14.77C11.96 14.65 11.08 14.36 10.04 13.43C9.23 12.7 8.68 11.81 8.52 11.53C8.36 11.26 8.51 11.11 8.64 10.98C8.76 10.86 8.91 10.66 9.04 10.51C9.17 10.36 9.21 10.25 9.3 10.06C9.39 9.87 9.34 9.71 9.27 9.58C9.21 9.44 8.67 8.12 8.45 7.58C8.23 7.05 8.01 7.12 7.84 7.12H7.33C7.11 7.12 6.76 7.2 6.46 7.53C6.16 7.86 5.32 8.64 5.32 10.23C5.32 11.82 6.48 13.36 6.64 13.58C6.8 13.8 8.92 17.06 12.16 18.46C15.4 19.86 15.4 19.4 15.98 19.34C16.57 19.29 17.86 18.57 18.13 17.82C18.39 17.06 18.39 16.42 18.31 16.28C18.23 16.14 18.06 16.06 17.79 15.93L16.54 14.77Z"/></svg>
