@@ -34,6 +34,59 @@
     <meta name="distribution" content="global">
     <meta name="audience" content="all">
     <meta name="subject" content="Ferretería y herramientas">
+
+    <!-- Schema.org Structured Data / LocalBusiness -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HardwareStore",
+      "name": "Ferreteria Mica",
+      "image": "https://ferreteria-mica.vercel.app/img/logo.png",
+      "@id": "https://ferreteria-mica.vercel.app/#store",
+      "url": "https://ferreteria-mica.vercel.app/",
+      "telephone": "+5491157124625",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. San Martín 2580",
+        "addressLocality": "Quilmes Oeste",
+        "addressRegion": "Buenos Aires",
+        "postalCode": "B1879",
+        "addressCountry": "AR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -34.7719616,
+        "longitude": -58.3217796
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "13:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "14:30",
+          "closes": "19:30"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "paymentAccepted": "Efectivo, Débito, Transferencia Bancaria",
+      "sameAs": [
+        "https://www.facebook.com/ferreteriamica",
+        "https://www.instagram.com/ferreteria_mica",
+        "https://wa.me/5491157124625"
+      ]
+    }
+    </script>
 </head>
 <body class="bg-slate-950 scroll-smooth">
     <header class="bg-amber-500 text-white py-8 fixed w-full z-50 shadow-slate-700 shadow-md">
