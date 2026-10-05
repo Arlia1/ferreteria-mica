@@ -65,52 +65,42 @@
 </head>
 <body class="bg-slate-950 scroll-smooth">
     <a href="#main-content" class="sr-only focus:not-sr-only">Saltar al contenido principal</a>
-    <header class="bg-amber-500 text-white py-8 fixed w-full z-50 shadow-slate-700 shadow-md">
-        <nav class="fixed top-0 left-0 w-full z-10" aria-label="Navegación principal">
-            <div class="px-4">
-                <div class="flex items-center justify-between h-16 relative">
-                    <div class="flex-shrink-0 pl-1">
-                        <a href="../" class="text-white">
-                            <img src="../img/logo.png" alt="Ferreteria Mica" width="96" height="48" decoding="async" class="w-24 h-12">
-                        </a>
-                    </div>
-                    <div class="flex-1 sm:block hidden items-center content-center">
-                        <div class="ml-10 flex flex-1 w-11/12 text-center">
-                            <a href="../"
-                                class="flex items-center justify-center text-slate-950 hover:bg-amber-400 hover:text-slate-700 px-3 py-2 rounded-md text-lg font-medium w-full h-14">Inicio</a>
-                            <a href="../nosotros/"
-                                class="flex items-center justify-center text-slate-950 hover:bg-amber-400 hover:text-slate-700 px-3 py-2 rounded-md text-lg font-medium w-full h-14">Acerca
-                                de nosotros</a>
-                            <a href="#inicio"
-                                class="flex items-center justify-center text-slate-950 hover:bg-amber-400 hover:text-slate-700 px-3 py-2 rounded-md text-lg font-medium w-full h-14">Servicios</a>
-                            <a href="../contacto/"
-                                class="flex items-center justify-center text-slate-950 hover:bg-amber-400 hover:text-slate-700 px-3 py-2 rounded-md text-lg font-medium w-full h-14">Contacto</a>
-                        </div>
-                    </div>
-                    <div class="sm:hidden">
-                        <button type="button"
-                            class="text-slate-950 shadow-amber-800 shadow-md hover:bg-amber-400 hover:text-slate-700 px-2 py-2 rounded-md text-lg font-medium focus:outline-none"
-                            onclick="toggleMenu()">Menu</button>
-                        <div class="hidden flex-col bg-amber-600 mt-16 fixed top-0 right-0 shadow-slate-700 shadow-md" id="menu-container">
-                            <a href="../"
-                                class="block bg-amber-600 text-slate-950 hover:bg-amber-500 hover:text-slate-500 py-5 w-screen text-lg text-center font-medium"
-                                onclick="toggleMenu()">Inicio</a>
-                            <a href="../nosotros/"
-                                class="block bg-amber-600 text-slate-950 hover:bg-amber-500 hover:text-slate-500 py-5 w-screen text-lg text-center font-medium"
-                                onclick="toggleMenu()">Acerca
-                                de nosotros</a>
-                            <a href="#inicio"
-                                class="block  bg-amber-600 text-slate-950 hover:bg-amber-500 hover:text-slate-500 py-5 w-screen text-lg text-center font-medium"
-                                onclick="toggleMenu()">Servicios</a>
-                            <a href="../contacto/"
-                                class="block  bg-amber-600 text-slate-950 hover:bg-amber-500 hover:text-slate-500 py-5 w-screen text-lg text-center font-medium"
-                                onclick="toggleMenu()">Contacto</a>
-                        </div>
-                    </div>
+    <header class="bg-amber-500 text-white fixed top-0 left-0 w-full z-50 shadow-md">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Navegación principal">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="../" class="flex items-center gap-2" aria-label="Ferretería Mica - Inicio">
+                        <img src="../img/logo.png" alt="Ferretería Mica" width="96" height="48" decoding="async" class="w-24 h-12 object-contain">
+                    </a>
                 </div>
-            </nav>
-        </div>
-        
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="../" class="nav-link">Inicio</a>
+                    <a href="../nosotros/" class="nav-link">Acerca de nosotros</a>
+                    <a href="#main-content" class="nav-link nav-link-active" aria-current="page">Servicios</a>
+                    <a href="../contacto/" class="nav-link">Contacto</a>
+                </div>
+                <div class="hidden md:flex items-center">
+                    <a href="https://wa.me/5491157124625?text=Hola%2C%20te%20contacto%20desde%20la%20p%C3%A1gina%20web" target="_blank" rel="noopener noreferrer" class="bg-slate-900 hover:bg-slate-800 text-amber-400 font-bold px-4 py-2 rounded-lg text-sm inline-flex items-center gap-2 shadow transition">
+                        <svg class="w-4 h-4 fill-emerald-400" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2Z"/></svg>
+                        <span>WhatsApp</span>
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button type="button" id="mobile-menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false" onclick="toggleMenu()" class="p-2 rounded-lg bg-amber-600 hover:bg-amber-700 text-slate-950 focus:outline-none shadow">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu Dropdown -->
+            <div id="menu-container" class="hidden md:hidden pb-4 pt-2 border-t border-amber-400/60">
+                <div class="flex flex-col space-y-1">
+                    <a href="../" class="nav-link w-full text-left" onclick="toggleMenu()">Inicio</a>
+                    <a href="../nosotros/" class="nav-link w-full text-left" onclick="toggleMenu()">Acerca de nosotros</a>
+                    <a href="#main-content" class="nav-link nav-link-active w-full text-left" onclick="toggleMenu()" aria-current="page">Servicios</a>
+                    <a href="../contacto/" class="nav-link w-full text-left" onclick="toggleMenu()">Contacto</a>
+                </div>
+            </div>
+        </nav>
     </header>
     
     <main id="main-content" class=" md:mx-auto md:px-4 md:py-8"> 
