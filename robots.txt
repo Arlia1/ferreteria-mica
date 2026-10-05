@@ -1,0 +1,9 @@
+# Robots.txt for Ferreteria Mica (Quilmes Oeste)
+# https://ferreteria-mica.vercel.app/
+
+User-agent: *
+Allow: /
+Disallow: /.well-known/
+
+# Sitemaps
+Sitemap: https://ferreteria-mica.vercel.app/sitemap.xml
