@@ -37,7 +37,71 @@ document.addEventListener('DOMContentLoaded', function () {
             closeMenu();
         }
     });
+
+    // Initialize business status (Open/Closed)
+    initBusinessStatus();
 });
+
+function initBusinessStatus() {
+    const badgeContainers = document.querySelectorAll('.business-status-badge');
+    if (!badgeContainers.length) return;
+
+    try {
+        const now = new Date();
+        const argTimeStr = now.toLocaleString('en-US', { timeZone: 'America/Argentina/Buenos_Aires' });
+        const argDate = new Date(argTimeStr);
+        const day = argDate.getDay();
+        const hour = argDate.getHours();
+        const minute = argDate.getMinutes();
+        const timeVal = hour * 60 + minute;
+
+        let isOpen = false;
+        let message = '';
+
+        if (day >= 1 && day <= 5) {
+            if (timeVal >= 480 && timeVal < 780) {
+                isOpen = true;
+                message = 'Abierto ahora · Turno mañana hasta 13:00 hs';
+            } else if (timeVal >= 870 && timeVal < 1170) {
+                isOpen = true;
+                message = 'Abierto ahora · Cierra 19:30 hs';
+            } else if (timeVal >= 780 && timeVal < 870) {
+                isOpen = false;
+                message = 'Pausa de mediodía · Reabre 14:30 hs';
+            } else if (timeVal < 480) {
+                isOpen = false;
+                message = 'Cerrado · Abre hoy 8:00 hs';
+            } else {
+                isOpen = false;
+                message = day === 5 ? 'Cerrado · Abre mañana sábado a las 9:00 hs' : 'Cerrado · Abre mañana a las 8:00 hs';
+            }
+        } else if (day === 6) {
+            if (timeVal >= 540 && timeVal < 1140) {
+                isOpen = true;
+                message = 'Abierto ahora · Corrido hasta 19:00 hs';
+            } else if (timeVal < 540) {
+                isOpen = false;
+                message = 'Cerrado · Abre hoy sábado 9:00 hs';
+            } else {
+                isOpen = false;
+                message = 'Cerrado · Abre el lunes 8:00 hs';
+            }
+        } else {
+            isOpen = false;
+            message = 'Cerrado hoy domingo · Abre el lunes 8:00 hs';
+        }
+
+        badgeContainers.forEach(el => {
+            if (isOpen) {
+                el.innerHTML = `<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shadow-sm"><span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span><span>${message}</span></span>`;
+            } else {
+                el.innerHTML = `<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-rose-500/20 text-rose-300 border border-rose-500/40 shadow-sm"><span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span><span>${message}</span></span>`;
+            }
+        });
+    } catch (err) {
+        // Fallback gracefully
+    }
+}
 
 function toggleMenu() {
     const menu = document.getElementById('menu-container');
