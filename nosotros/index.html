@@ -67,6 +67,56 @@
       }
     }
     </script>
+
+    <!-- Schema.org FAQPage -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Hacen envíos a domicilio en el día?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, realizamos envíos en el día en Quilmes Oeste y zonas cercanas para pedidos coordinados telefónicamente o por WhatsApp."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué formas y medios de pago aceptan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aceptamos efectivo, tarjetas de débito, tarjetas de crédito y transferencias bancarias o pagos digitales por Mercado Pago."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Realizan presupuestos y cotizaciones para empresas y obras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, confeccionamos presupuestos detallados sin cargo tanto para particulares como para profesionales de la construcción y empresas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Ofrecen asesoramiento técnico personalizado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contamos con más de 25 años de trayectoria orientando a nuestros clientes con la elección precisa de herramientas, pinturas y repuestos para cada proyecto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuáles son los horarios de atención al público?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Atendemos de Lunes a Viernes de 08:00 a 13:00 y de 14:30 a 19:30 hs, y los Sábados de 09:00 a 19:00 hs de corrido."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body class="bg-slate-950 scroll-smooth">
     <a href="#main-content" class="sr-only focus:not-sr-only">Saltar al contenido principal</a>
@@ -116,24 +166,41 @@
             <h2 class="text-xl sm:text-2xl text-slate-300 font-normal mt-3 max-w-2xl">Más de 25 años brindando soluciones, materiales y herramientas de confianza en Quilmes Oeste</h2>
         </div>
         
-        <div class="bg-amber-600 flex justify-center items-center mt-8 h-[100vh] xs:h-[75vh] shadow-amber-500 shadow-lg">
-            <div class="text-center px-4">
-            <h2 class="text-5xl font-bold text-white mb-4">Quiénes Somos</h2>
-            <p class="text-white text-xl">En Ferreteria Mica somos una empresa dedicada a ofrecer soluciones en materiales de construcción y herramientas para el hogar. Con más de 25 años de experiencia, nos destacamos por brindar productos de alta calidad y un excelente servicio al cliente.</p>
-            <p class="text-white text-xl">Nuestro objetivo principal es satisfacer las necesidades de nuestros clientes, ofreciendo una amplia variedad de productos y un asesoramiento personalizado. Nos enorgullece ser una empresa confiable y comprometida con la satisfacción de nuestros clientes.</p>
+        <!-- Quiénes Somos y Trayectoria -->
+        <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 sm:p-12 mb-10 shadow-xl">
+            <span class="inline-block px-3 py-1 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">Nuestra Empresa</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-6">Trayectoria, Compromiso y Calidad</h2>
+            <div class="space-y-4 text-slate-300 text-lg leading-relaxed">
+                <p>
+                    En <strong class="text-amber-400">Ferretería Mica</strong> somos un comercio familiar y profesional dedicado a proveer soluciones completas en materiales de construcción, herramientas de precisión y suministros para el hogar y la industria.
+                </p>
+                <p>
+                    Con más de <strong class="text-white">25 años de presencia ininterrumpida en Quilmes Oeste</strong>, nos enorgullece ser un referente de confianza para vecinos, maestros mayores de obra, electricistas, plomeros y empresas que buscan asesoramiento honesto y productos de primera línea.
+                </p>
+            </div>
+
+            <!-- 3 Pilares -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10 pt-8 border-t border-slate-800">
+                <div class="bg-slate-950/60 p-6 rounded-2xl border border-slate-800/80">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl mb-4">🏆</div>
+                    <h3 class="text-white font-bold text-lg mb-2">+25 Años de Experiencia</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Sólida trayectoria en Quilmes Oeste acompañando proyectos desde el inicio hasta el último detalle.</p>
+                </div>
+                <div class="bg-slate-950/60 p-6 rounded-2xl border border-slate-800/80">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl mb-4">💡</div>
+                    <h3 class="text-white font-bold text-lg mb-2">Asesoramiento Técnico</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Te orientamos con la solución precisa, medidas y herramientas exactas para ahorrar tiempo y dinero.</p>
+                </div>
+                <div class="bg-slate-950/60 p-6 rounded-2xl border border-slate-800/80">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl mb-4">⚡</div>
+                    <h3 class="text-white font-bold text-lg mb-2">Stock Permanente</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Amplia variedad de rubros: bulonería, sanitarios, electricidad, máquinas eléctricas y pinturas.</p>
+                </div>
             </div>
         </div>
 
-        <div class="flex justify-center items-center mt-8 h-[100vh] xs:h-[75vh]">
-            <div class="text-center px-4">
-                <h2 class="text-5xl font-bold text-white mb-4">¿Por qué Nosotros?</h2>
-                <p class="text-white text-xl">En Ferreteria Mica, nos destacamos por ofrecer productos de alta calidad y un servicio al cliente excepcional. Nuestro equipo está compuesto por profesionales capacitados que están siempre dispuestos a brindarte el mejor asesoramiento. Elegirnos significa optar por una empresa comprometida con la satisfacción de sus clientes, ofreciendo una amplia variedad de productos y soluciones personalizadas para todas tus necesidades de construcción y reparación. Con más de 25 años de experiencia en el mercado, somos tu mejor opción para proyectos grandes y pequeños.</p>
-            </div>
-        </div>
-
-        
         <!-- Horarios con estado en vivo -->
-        <section class="bg-gradient-to-br from-amber-600 to-amber-700 rounded-3xl p-8 sm:p-12 my-8 shadow-2xl text-center">
+        <section class="bg-gradient-to-br from-amber-600 to-amber-700 rounded-3xl p-8 sm:p-12 mb-10 shadow-2xl text-center">
             <div class="max-w-2xl mx-auto">
                 <span class="inline-block px-3 py-1 bg-amber-800/40 text-amber-100 rounded-full text-sm font-semibold uppercase tracking-wider mb-3">Atención al Público</span>
                 <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Horarios de Atención</h2>
@@ -154,20 +221,117 @@
                 </div>
             </div>
         </section>
-    
-            <div class="flex justify-center items-center mt-8 h-[100vh] xs:h-[75vh]">
-                <div class="text-center px-4">
-                    <h2 class="text-5xl font-bold text-white mb-4">Medios de Pago</h2>
-                    <p class="text-white text-xl">Aceptamos efectivo, transferencia y débito como formas de pago.</p>
-                    <p class="text-white text-xl">Además, ofrecemos envíos en el día.</p>
+
+        <!-- Medios de Pago y Envíos -->
+        <section class="bg-slate-900 border border-slate-800 rounded-3xl p-8 sm:p-10 mb-10 shadow-xl">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="inline-block px-3 py-1 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full text-xs font-semibold uppercase tracking-wider mb-3">Facilidades para tu compra</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Medios de Pago y Envíos</h2>
+                <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                    Elegí la forma que más te convenga para abonar tus compras de manera segura y rápida.
+                </p>
+
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+                    <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+                        <span class="text-3xl block mb-2">💵</span>
+                        <h3 class="text-white font-semibold text-sm">Efectivo</h3>
+                        <p class="text-slate-400 text-xs mt-1">En el local o contraentrega</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+                        <span class="text-3xl block mb-2">💳</span>
+                        <h3 class="text-white font-semibold text-sm">Débito y Crédito</h3>
+                        <p class="text-slate-400 text-xs mt-1">Visa, Mastercard, Cabal</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+                        <span class="text-3xl block mb-2">📲</span>
+                        <h3 class="text-white font-semibold text-sm">Transferencias</h3>
+                        <p class="text-slate-400 text-xs mt-1">Mercado Pago y CBU/CVU</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-950/80 border border-slate-800">
+                        <span class="text-3xl block mb-2">🚚</span>
+                        <h3 class="text-white font-semibold text-sm">Envíos en el Día</h3>
+                        <p class="text-slate-400 text-xs mt-1">Quilmes Oeste y zona</p>
+                    </div>
                 </div>
             </div>
-    
-            <div class="bg-amber-600 flex justify-center items-center my-8 h-[100vh] xs:h-[75vh]  shadow-amber-500 shadow-lg">
-                <div class="text-center px-4 ">
-                    <h2 class="text-5xl font-bold text-white mb-4">Contáctanos</h2>
-                    <p class="text-white text-xl">Si tienes alguna pregunta, consulta o queres conocer nuestras ofertas, no dudes en contactarnos. Estamos para ayudarte.</p>
-                    <a href="../contacto/" class="flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-50 hover:text-slate-150 px-3 py-2 rounded-md text-md font-medium w-full h-14 mt-8 shadow-amber-500 shadow-lg">Ir a Contacto</a>
+        </section>
+
+        <!-- Sección de Preguntas Frecuentes FAQ con Acordeón -->
+        <section class="my-12" aria-labelledby="faq-heading">
+            <div class="text-center mb-8">
+                <span class="inline-block px-3 py-1 bg-amber-500/10 text-amber-400 border border-amber-500/20 rounded-full text-xs font-semibold uppercase tracking-wider mb-2">Dudas habituales</span>
+                <h2 id="faq-heading" class="text-3xl sm:text-4xl font-extrabold text-white">Preguntas Frecuentes</h2>
+                <p class="text-slate-400 text-base mt-2 max-w-xl mx-auto">Encontrá respuestas rápidas sobre envíos, cotizaciones, métodos de pago y horarios de atención.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+                <details class="faq-item">
+                    <summary class="faq-summary">
+                        <span>¿Hacen envíos a domicilio en el día?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Sí, realizamos envíos en el día en Quilmes Oeste y zonas de cercanía para pedidos confirmados y coordinados previamente por WhatsApp o teléfono. Consultanos disponibilidad y costos según tu zona.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-summary">
+                        <span>¿Qué formas y medios de pago aceptan?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Aceptamos efectivo, tarjetas de débito, tarjetas de crédito (consultar promociones vigentes) y transferencias bancarias directas o mediante Mercado Pago con comprobante.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-summary">
+                        <span>¿Realizan presupuestos y cotizaciones para empresas y obras?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Sí, preparamos cotizaciones detalladas sin cargo para contratistas, profesionales de la construcción y empresas. Podés enviarnos tu cómputo de materiales por WhatsApp o a través de nuestra sección de Contacto.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-summary">
+                        <span>¿Ofrecen asesoramiento técnico personalizado?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Totalmente. Con más de 25 años en el rubro, te ayudamos a elegir la herramienta o repuesto correcto según la complejidad de la reparación o instalación que vayas a realizar.</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-summary">
+                        <span>¿Cuáles son los horarios de atención al público?</span>
+                        <svg class="faq-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>Abrimos de Lunes a Viernes de 08:00 a 13:00 y de 14:30 a 19:30 hs, y los Sábados de 09:00 a 19:00 hs de corrido. Domingos y feriados permanecemos cerrados.</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Llamado a la Acción / Contacto -->
+        <div class="bg-gradient-to-br from-amber-500 to-amber-600 rounded-3xl p-8 sm:p-12 my-10 shadow-2xl text-center">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 mb-4">¿Tenés una consulta o proyecto en marcha?</h2>
+                <p class="text-slate-900 text-lg mb-8 leading-relaxed font-medium">
+                    Estamos listos para asesorarte con la mejor atención y los precios más competitivos de la zona.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="../contacto/" class="bg-slate-950 hover:bg-slate-900 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition duration-200">
+                        Ir a Contacto y Ubicación
+                    </a>
+                    <a href="https://wa.me/5491157124625?text=Hola%20Ferreter%C3%ADa%20Mica%2C%20quisiera%20hacerles%20una%20consulta" target="_blank" rel="noopener noreferrer" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-3.5 rounded-xl shadow-lg transition duration-200 inline-flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2Z"/></svg>
+                        <span>Escribinos por WhatsApp</span>
+                    </a>
                 </div>
             </div>
         </div>
