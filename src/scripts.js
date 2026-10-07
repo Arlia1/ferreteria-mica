@@ -59,36 +59,38 @@ function initBusinessStatus() {
         let message = '';
 
         if (day >= 1 && day <= 5) {
-            if (timeVal >= 480 && timeVal < 780) {
+            if (timeVal >= 510 && timeVal < 1140) {
                 isOpen = true;
-                message = 'Abierto ahora · Turno mañana hasta 13:00 hs';
-            } else if (timeVal >= 870 && timeVal < 1170) {
-                isOpen = true;
-                message = 'Abierto ahora · Cierra 19:30 hs';
-            } else if (timeVal >= 780 && timeVal < 870) {
+                message = 'Abierto ahora · Cierra 19:00 hs';
+            } else if (timeVal < 510) {
                 isOpen = false;
-                message = 'Pausa de mediodía · Reabre 14:30 hs';
-            } else if (timeVal < 480) {
-                isOpen = false;
-                message = 'Cerrado · Abre hoy 8:00 hs';
+                message = 'Cerrado · Abre hoy 8:30 hs';
             } else {
                 isOpen = false;
-                message = day === 5 ? 'Cerrado · Abre mañana sábado a las 9:00 hs' : 'Cerrado · Abre mañana a las 8:00 hs';
+                message = day === 5 ? 'Cerrado · Abre mañana sábado a las 8:30 hs' : 'Cerrado · Abre mañana a las 8:30 hs';
             }
         } else if (day === 6) {
-            if (timeVal >= 540 && timeVal < 1140) {
+            if (timeVal >= 510 && timeVal < 1080) {
                 isOpen = true;
-                message = 'Abierto ahora · Corrido hasta 19:00 hs';
-            } else if (timeVal < 540) {
+                message = 'Abierto ahora · Corrido hasta 18:00 hs';
+            } else if (timeVal < 510) {
                 isOpen = false;
-                message = 'Cerrado · Abre hoy sábado 9:00 hs';
+                message = 'Cerrado · Abre hoy sábado 8:30 hs';
             } else {
                 isOpen = false;
-                message = 'Cerrado · Abre el lunes 8:00 hs';
+                message = 'Cerrado · Abre mañana domingo a las 9:00 hs';
             }
         } else {
-            isOpen = false;
-            message = 'Cerrado hoy domingo · Abre el lunes 8:00 hs';
+            if (timeVal >= 540 && timeVal < 780) {
+                isOpen = true;
+                message = 'Abierto ahora · Cierra 13:00 hs';
+            } else if (timeVal < 540) {
+                isOpen = false;
+                message = 'Cerrado · Abre hoy domingo 9:00 hs';
+            } else {
+                isOpen = false;
+                message = 'Cerrado · Abre el lunes 8:30 hs';
+            }
         }
 
         badgeContainers.forEach(el => {
