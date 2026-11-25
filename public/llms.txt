@@ -1,0 +1,30 @@
+# Ferretería Mica
+
+> Ferretería industrial, materiales de construcción y herramientas en Quilmes Oeste, Buenos Aires, Argentina. Más de 25 años de trayectoria con catálogo online, precios actualizados y envíos en el día.
+
+## Datos del Local
+- **Nombre:** Ferretería Mica
+- **Dirección:** Av. San Martín 2652, Quilmes Oeste, Provincia de Buenos Aires (B1879), Argentina
+- **Coordenadas:** -34.7719616, -58.3217796
+- **Teléfono y WhatsApp:** +54 9 11 5712-4625 (11 5712-4625)
+- **Horarios:** Lunes a Viernes 08:30 a 19:00 hs | Sábados 08:30 a 18:00 hs | Domingos 09:00 a 13:00 hs
+- **Medios de pago:** Efectivo, Tarjeta de Débito, Transferencia Bancaria
+- **Entregas:** Retiro en mostrador y envíos en el día en Quilmes Oeste, Quilmes, Bernal, Ezpeleta, San Francisco Solano y alrededores
+
+## Rubros y Especialidades
+- **Herramientas:** Amoladoras, taladros percutores y a batería, sierras circulares, lijadoras, discos Tyrolit, llaves combinadas, pinzas, martillos y niveles.
+- **Materiales de Construcción:** Hidrófugos Ceresita/Sika, adhesivos Klaukol, ligante Tacurú, yeso Tuyango, pastinas, membranas asfálticas y espuma poliuretano.
+- **Bulonería y Tornillería:** Tornillos autoperforantes, drywall T1/T2/T3, madera, tarugos Fischer, varillas roscadas, mechas HSS y widia, remaches pop y precintos.
+- **Oxígeno y Nitrógeno:** Suministro y recarga en el momento en el local para soldadura autógena y refrigeración, más reguladores y mangueras.
+- **Sanitarios y Plomería:** Línea completa de caños y accesorios Awaduct con O'Ring, termofusión Acqua System, llaves esféricas, flexibles, sifones y griferías.
+- **Pinturas y Membranas:** Pintura membrana de gel con caucho, látex interior/exterior Alba y Sinteplast, esmaltes 3 en 1, enduidos, diluyentes, rodillos y pinceles.
+- **Materiales Eléctricos:** Cables normalizados IRAM Prysmian/Kalop, térmicas y disyuntores Sica/Schneider, iluminación LED Philips/Macroled y caños corrugados.
+- **Herrajes y Accesorios:** Cerraduras doble paleta, candados de bronce, bisagras, siliconas Siloc, Poxipol, guantes y protección ocular.
+- **Jardinería y Riego:** Mangueras tricapa, acoples rápidos, palas forjadas Gherardi, tijeras de podar Tramontina, rastrillos y bordeadoras.
+
+## URLs Principales
+- [Inicio](https://ferreteria-mica.vercel.app/)
+- [Catálogo Online con Precios](https://ferreteria-mica.vercel.app/catalogo)
+- [Rubros y Servicios](https://ferreteria-mica.vercel.app/servicios)
+- [Sobre Nosotros y Preguntas Frecuentes](https://ferreteria-mica.vercel.app/nosotros)
+- [Contacto y Mapa](https://ferreteria-mica.vercel.app/contacto)

@@ -1,0 +1,2615 @@
+{
+  "settings": {
+    "whatsappNumber": "5491157124625",
+    "deliveryCost": 2500,
+    "freeDeliveryThreshold": 65000,
+    "sameDayDeliveryCutoff": "17:00",
+    "isOpenOverride": "auto",
+    "announcement": "Envíos en el día en Quilmes Oeste y zonas cercanas. Más de 25 años en Av. San Martín 2652.",
+    "categories": [
+      {
+        "id": "herramientas",
+        "name": "Herramientas",
+        "description": "Manuales, eléctricas y a batería",
+        "image": "/img/productos/amoladora.jpg"
+      },
+      {
+        "id": "construccion",
+        "name": "Materiales de Construcción",
+        "description": "Hidrófugos, yeso, pegamentos y aislantes",
+        "image": "/img/productos/cemento.jpg"
+      },
+      {
+        "id": "buloneria",
+        "name": "Bulonería y Tornillería",
+        "description": "Tornillos, bulones, tuercas, tarugos y anclajes",
+        "image": "/img/productos/bulones.jpg"
+      },
+      {
+        "id": "gases",
+        "name": "Oxígeno y Nitrógeno",
+        "description": "Carga en el momento para soldadura y refrigeración",
+        "image": "/img/productos/tubo-oxigeno.jpg"
+      },
+      {
+        "id": "sanitarios",
+        "name": "Sanitarios y Plomería",
+        "description": "Caños Awaduct, termofusión, griferías y desagües",
+        "image": "/img/productos/cano-pvc.jpg"
+      },
+      {
+        "id": "pinturas",
+        "name": "Pinturas y Membranas",
+        "description": "Látex, sintéticos, membranas y gel con caucho",
+        "image": "/img/productos/rodillo.jpg"
+      },
+      {
+        "id": "electricidad",
+        "name": "Materiales Eléctricos",
+        "description": "Cables normalizados, térmicas, disyuntores y LED",
+        "image": "/img/productos/termica.jpg"
+      },
+      {
+        "id": "herrajes",
+        "name": "Herrajes y Accesorios",
+        "description": "Cerraduras, candados, selladores y seguridad",
+        "image": "/img/productos/candado.jpg"
+      },
+      {
+        "id": "jardineria",
+        "name": "Jardinería y Riego",
+        "description": "Mangueras, acoples, podadoras y palas",
+        "image": "/img/productos/manguera.jpg"
+      }
+    ]
+  },
+  "products": [
+    {
+      "id": "prod-her-001",
+      "sku": "HER-AMOL-115",
+      "name": "Amoladora Angular 115mm 850W",
+      "brand": "Bosch",
+      "category": "herramientas",
+      "description": "Amoladora angular profesional con empuñadura ergonómica y guarda protectora ajustable para corte y desbaste.",
+      "unit": "unidad",
+      "price": 98500,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 6,
+      "minStockAlert": 2,
+      "variants": [],
+      "featured": true,
+      "image": "/img/productos/amoladora.jpg"
+    },
+    {
+      "id": "prod-her-002",
+      "sku": "HER-TAL-13",
+      "name": "Taladro Percutor 13mm 750W",
+      "brand": "Black+Decker",
+      "category": "herramientas",
+      "description": "Mandril metálico 13mm, velocidad variable reversible y selector de percusión para mampostería, madera y metal.",
+      "unit": "unidad",
+      "price": 84900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 5,
+      "minStockAlert": 2,
+      "variants": [],
+      "featured": true,
+      "image": "/img/productos/taladro.jpg"
+    },
+    {
+      "id": "prod-her-003",
+      "sku": "HER-DISC-CORTE",
+      "name": "Disco de Corte Metal / Acero Inoxidable",
+      "brand": "Tyrolit",
+      "category": "herramientas",
+      "description": "Disco abrasivo ultrafino de alto rendimiento y corte limpio con mínima rebaba.",
+      "unit": "unidad",
+      "price": 2400,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 85,
+      "minStockAlert": 15,
+      "variants": [
+        {
+          "id": "115x1mm",
+          "label": "115mm x 1.0mm",
+          "sku": "HER-DISC-115",
+          "price": 2400,
+          "stockQuantity": 55,
+          "inStock": true
+        },
+        {
+          "id": "180x1-6mm",
+          "label": "180mm x 1.6mm",
+          "sku": "HER-DISC-180",
+          "price": 4600,
+          "stockQuantity": 30,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/disco-corte.jpg"
+    },
+    {
+      "id": "prod-her-004",
+      "sku": "HER-MART-GAL",
+      "name": "Martillo Galponero Cabo Fibra",
+      "brand": "Stanley",
+      "category": "herramientas",
+      "description": "Cabeza de acero forjado y mango anatómico antideslizante absorbe impactos.",
+      "unit": "unidad",
+      "price": 18500,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 11,
+      "minStockAlert": 3,
+      "variants": [
+        {
+          "id": "20oz",
+          "label": "20 oz (Estándar)",
+          "sku": "HER-MART-20",
+          "price": 18500,
+          "stockQuantity": 7,
+          "inStock": true
+        },
+        {
+          "id": "27oz",
+          "label": "27 oz (Reforzado)",
+          "sku": "HER-MART-27",
+          "price": 22900,
+          "stockQuantity": 4,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/martillo.jpg"
+    },
+    {
+      "id": "prod-her-005",
+      "sku": "HER-CINTA-MET",
+      "name": "Cinta Métrica Engomada con Freno",
+      "brand": "Bremen",
+      "category": "herramientas",
+      "description": "Cinta de acero con gancho imantado y carcasa resistente a golpes.",
+      "unit": "unidad",
+      "price": 7900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 20,
+      "minStockAlert": 5,
+      "variants": [
+        {
+          "id": "5m",
+          "label": "5 metros x 19mm",
+          "sku": "HER-CINTA-5M",
+          "price": 7900,
+          "stockQuantity": 14,
+          "inStock": true
+        },
+        {
+          "id": "8m",
+          "label": "8 metros x 25mm",
+          "sku": "HER-CINTA-8M",
+          "price": 12400,
+          "stockQuantity": 6,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/cinta-metrica.jpg"
+    },
+    {
+      "id": "prod-her-006",
+      "sku": "HER-ATOR-20V",
+      "name": "Taladro Atornillador Inalámbrico 20V Ion-Litio",
+      "brand": "Stanley",
+      "category": "herramientas",
+      "description": "Incluye 2 baterías 20V, cargador rápido y maletín plástico. Torque ajustable en 22 posiciones.",
+      "unit": "unidad",
+      "price": 164000,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 4,
+      "minStockAlert": 1,
+      "variants": [],
+      "featured": true,
+      "image": "/img/productos/taladro.jpg"
+    },
+    {
+      "id": "prod-her-007",
+      "sku": "HER-SIER-CIR",
+      "name": "Sierra Circular 7 1/4\" 1400W",
+      "brand": "Black+Decker",
+      "category": "herramientas",
+      "description": "Base de acero regulable hasta 45 grados con guía paralela y hoja de carburo de 24 dientes.",
+      "unit": "unidad",
+      "price": 129500,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 3,
+      "minStockAlert": 1,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/sierra-circular.jpg"
+    },
+    {
+      "id": "prod-her-008",
+      "sku": "HER-LIJ-ORB",
+      "name": "Lijadora Orbital 1/4 Hoja 240W",
+      "brand": "Bosch",
+      "category": "herramientas",
+      "description": "Sistema microfiltro para polvo y pinzas metálicas de sujeción rápida.",
+      "unit": "unidad",
+      "price": 78900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 4,
+      "minStockAlert": 2,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/lijadora.jpg"
+    },
+    {
+      "id": "prod-her-009",
+      "sku": "HER-LLAV-COMB",
+      "name": "Llave Combinada Cromo Vanadio",
+      "brand": "Bremen",
+      "category": "herramientas",
+      "description": "Boca fija y estriada acodada 15 grados, acero cromo vanadio satinado.",
+      "unit": "unidad",
+      "price": 4200,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 44,
+      "minStockAlert": 8,
+      "variants": [
+        {
+          "id": "10mm",
+          "label": "10 mm",
+          "sku": "HER-LL-10",
+          "price": 4200,
+          "stockQuantity": 12,
+          "inStock": true
+        },
+        {
+          "id": "13mm",
+          "label": "13 mm",
+          "sku": "HER-LL-13",
+          "price": 5100,
+          "stockQuantity": 12,
+          "inStock": true
+        },
+        {
+          "id": "17mm",
+          "label": "17 mm",
+          "sku": "HER-LL-17",
+          "price": 6900,
+          "stockQuantity": 10,
+          "inStock": true
+        },
+        {
+          "id": "19mm",
+          "label": "19 mm",
+          "sku": "HER-LL-19",
+          "price": 8200,
+          "stockQuantity": 10,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/llave-combinada.jpg"
+    },
+    {
+      "id": "prod-her-010",
+      "sku": "HER-PIN-UNIV",
+      "name": "Pinza Universal Aislada 1000V",
+      "brand": "Bahco",
+      "category": "herramientas",
+      "description": "Acero aleado de alto rendimiento con mango bimaterial antideslizante.",
+      "unit": "unidad",
+      "price": 23500,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 12,
+      "minStockAlert": 3,
+      "variants": [
+        {
+          "id": "7p",
+          "label": "7 pulgadas (180mm)",
+          "sku": "HER-PIN-7",
+          "price": 23500,
+          "stockQuantity": 7,
+          "inStock": true
+        },
+        {
+          "id": "8p",
+          "label": "8 pulgadas (200mm)",
+          "sku": "HER-PIN-8",
+          "price": 26900,
+          "stockQuantity": 5,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/pinza.jpg"
+    },
+    {
+      "id": "prod-her-011",
+      "sku": "HER-PICO-LORO",
+      "name": "Pinza Pico de Loro 10\" Cremallera",
+      "brand": "Bremen",
+      "category": "herramientas",
+      "description": "Mordaza dentada multiposición para caños, tuercas y trabajos de plomería.",
+      "unit": "unidad",
+      "price": 17800,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 9,
+      "minStockAlert": 3,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/pinza.jpg"
+    },
+    {
+      "id": "prod-her-012",
+      "sku": "HER-DISC-DIAM",
+      "name": "Disco Diamantado 115mm Corte Seco / Húmedo",
+      "brand": "Tyrolit",
+      "category": "herramientas",
+      "description": "Para corte preciso de cerámica, porcelanato, ladrillo y hormigón.",
+      "unit": "unidad",
+      "price": 9800,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 24,
+      "minStockAlert": 5,
+      "variants": [
+        {
+          "id": "continuo",
+          "label": "Continuo (Cerámica / Porcelanato)",
+          "sku": "HER-DIAM-CON",
+          "price": 9800,
+          "stockQuantity": 12,
+          "inStock": true
+        },
+        {
+          "id": "segmentado",
+          "label": "Segmentado (Hormigón / Mampostería)",
+          "sku": "HER-DIAM-SEG",
+          "price": 10500,
+          "stockQuantity": 12,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/disco-corte.jpg"
+    },
+    {
+      "id": "prod-her-013",
+      "sku": "HER-NIV-ALU",
+      "name": "Nivel de Aluminio Magnético 3 Burbujas",
+      "brand": "Stanley",
+      "category": "herramientas",
+      "description": "Cuerpo perfilado de aluminio con lectura horizontal, vertical y 45 grados.",
+      "unit": "unidad",
+      "price": 14900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 8,
+      "minStockAlert": 2,
+      "variants": [
+        {
+          "id": "40cm",
+          "label": "40 cm",
+          "sku": "HER-NIV-40",
+          "price": 14900,
+          "stockQuantity": 5,
+          "inStock": true
+        },
+        {
+          "id": "60cm",
+          "label": "60 cm",
+          "sku": "HER-NIV-60",
+          "price": 19200,
+          "stockQuantity": 3,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/nivel.jpg"
+    },
+    {
+      "id": "prod-her-014",
+      "sku": "HER-JGO-DEST",
+      "name": "Juego de Destornilladores Plano y Phillips x 6",
+      "brand": "Stanley",
+      "category": "herramientas",
+      "description": "Puntas imantadas de acero cromo vanadio con mango ergonómico.",
+      "unit": "pack",
+      "price": 24600,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 7,
+      "minStockAlert": 2,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/destornilladores.jpg"
+    },
+    {
+      "id": "prod-con-001",
+      "sku": "CON-HID-CER",
+      "name": "Hidrófugo en Pasta Ceresita",
+      "brand": "Sika / Ceresita",
+      "category": "construccion",
+      "description": "Aditivo impermeabilizante para morteros de cemento en revoques, carpetas y cimientos.",
+      "unit": "kg",
+      "price": 6800,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 26,
+      "minStockAlert": 5,
+      "variants": [
+        {
+          "id": "1kg",
+          "label": "Bidón 1 Kg",
+          "sku": "CON-HID-1",
+          "price": 6800,
+          "stockQuantity": 14,
+          "inStock": true
+        },
+        {
+          "id": "4kg",
+          "label": "Balde 4 Kg",
+          "sku": "CON-HID-4",
+          "price": 19500,
+          "stockQuantity": 8,
+          "inStock": true
+        },
+        {
+          "id": "10kg",
+          "label": "Balde 10 Kg",
+          "sku": "CON-HID-10",
+          "price": 42000,
+          "stockQuantity": 4,
+          "inStock": true
+        }
+      ],
+      "featured": true,
+      "image": "/img/productos/cemento.jpg"
+    },
+    {
+      "id": "prod-con-002",
+      "sku": "CON-KLK-30",
+      "name": "Adhesivo Cerámico Klaukol Impermeable x 30 Kg",
+      "brand": "Klaukol",
+      "category": "construccion",
+      "description": "Adhesivo cementicio impermeable para colocación de cerámicos en pisos y paredes interiores y exteriores.",
+      "unit": "unidad",
+      "price": 15900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 22,
+      "minStockAlert": 6,
+      "variants": [
+        {
+          "id": "imp",
+          "label": "Impermeable 30 Kg",
+          "sku": "CON-KLK-IMP",
+          "price": 15900,
+          "stockQuantity": 14,
+          "inStock": true
+        },
+        {
+          "id": "porc",
+          "label": "Porcellanato Flex 30 Kg",
+          "sku": "CON-KLK-POR",
+          "price": 24800,
+          "stockQuantity": 8,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/cemento.jpg"
+    },
+    {
+      "id": "prod-con-003",
+      "sku": "CON-TAC-BL",
+      "name": "Ligante Puente de Adherencia Tacurú",
+      "brand": "Sika / Tacurú",
+      "category": "construccion",
+      "description": "Látex acrílico para mejorar adherencia de revoques, carpetas y pinturas a la cal.",
+      "unit": "litro",
+      "price": 9400,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 15,
+      "minStockAlert": 4,
+      "variants": [
+        {
+          "id": "1l",
+          "label": "Botella 1 L",
+          "sku": "CON-TAC-1L",
+          "price": 9400,
+          "stockQuantity": 9,
+          "inStock": true
+        },
+        {
+          "id": "4l",
+          "label": "Bidón 4 L",
+          "sku": "CON-TAC-4L",
+          "price": 32500,
+          "stockQuantity": 6,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/pintura-latex.jpg"
+    },
+    {
+      "id": "prod-con-004",
+      "sku": "CON-YESO-5",
+      "name": "Yeso Blanco Fraguado Rápido",
+      "brand": "Tuyango",
+      "category": "construccion",
+      "description": "Yeso tradicional para reparaciones rápidas, amurado de cajas eléctricas y terminaciones interiores.",
+      "unit": "kg",
+      "price": 4500,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 30,
+      "minStockAlert": 6,
+      "variants": [
+        {
+          "id": "5kg",
+          "label": "Bolsa 5 Kg",
+          "sku": "CON-YESO-5",
+          "price": 4500,
+          "stockQuantity": 20,
+          "inStock": true
+        },
+        {
+          "id": "25kg",
+          "label": "Bolsa 25 Kg",
+          "sku": "CON-YESO-25",
+          "price": 17200,
+          "stockQuantity": 10,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/cemento.jpg"
+    },
+    {
+      "id": "prod-con-005",
+      "sku": "CON-PAST-1K",
+      "name": "Pastina Impermeable Antihongo",
+      "brand": "Klaukol",
+      "category": "construccion",
+      "description": "Junta cementicia impermeable y antihongo para cerámicos y porcelanatos.",
+      "unit": "kg",
+      "price": 3800,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 35,
+      "minStockAlert": 8,
+      "variants": [
+        {
+          "id": "blanco",
+          "label": "Blanco 1 Kg",
+          "sku": "CON-PAST-BL",
+          "price": 3800,
+          "stockQuantity": 15,
+          "inStock": true
+        },
+        {
+          "id": "gris",
+          "label": "Gris Perla 1 Kg",
+          "sku": "CON-PAST-GR",
+          "price": 3800,
+          "stockQuantity": 12,
+          "inStock": true
+        },
+        {
+          "id": "negro",
+          "label": "Negro 1 Kg",
+          "sku": "CON-PAST-NG",
+          "price": 4100,
+          "stockQuantity": 8,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/cemento.jpg"
+    },
+    {
+      "id": "prod-con-006",
+      "sku": "CON-ESP-750",
+      "name": "Espuma de Poliuretano Expandido 750ml",
+      "brand": "Sika",
+      "category": "construccion",
+      "description": "Aislante térmico y acústico para rellenado de marcos, aberturas y pasos de cañerías.",
+      "unit": "unidad",
+      "price": 12900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 14,
+      "minStockAlert": 4,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/silicona.jpg"
+    },
+    {
+      "id": "prod-con-007",
+      "sku": "CON-MEM-ROLL",
+      "name": "Membrana Asfáltica Aluminio Rollo x 10m²",
+      "brand": "Ormiflex / Megaflex",
+      "category": "construccion",
+      "description": "Membrana impermeabilizante transitable con foil de aluminio gofrado para techos y losas.",
+      "unit": "unidad",
+      "price": 54900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 10,
+      "minStockAlert": 3,
+      "variants": [
+        {
+          "id": "35kg",
+          "label": "35 Kg (3.5mm)",
+          "sku": "CON-MEM-35",
+          "price": 54900,
+          "stockQuantity": 6,
+          "inStock": true
+        },
+        {
+          "id": "40kg",
+          "label": "40 Kg (4.0mm Reforzada)",
+          "sku": "CON-MEM-40",
+          "price": 63500,
+          "stockQuantity": 4,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/cemento.jpg"
+    },
+    {
+      "id": "prod-con-008",
+      "sku": "CON-CEM-RAP",
+      "name": "Cemento de Fraguado Ultra Rápido Sika-2",
+      "brand": "Sika",
+      "category": "construccion",
+      "description": "Sellador instantáneo de filtraciones de agua y fijación rápida en hormigón.",
+      "unit": "kg",
+      "price": 11400,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 12,
+      "minStockAlert": 3,
+      "variants": [
+        {
+          "id": "2kg",
+          "label": "Envase 2 Kg",
+          "sku": "CON-SIK2-2",
+          "price": 11400,
+          "stockQuantity": 8,
+          "inStock": true
+        },
+        {
+          "id": "5kg",
+          "label": "Balde 5 Kg",
+          "sku": "CON-SIK2-5",
+          "price": 24900,
+          "stockQuantity": 4,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/cemento.jpg"
+    },
+    {
+      "id": "prod-con-009",
+      "sku": "CON-CRUC-CER",
+      "name": "Crucetas Separadores para Cerámica (Bolsa x 100)",
+      "brand": "Ferretería Mica",
+      "category": "construccion",
+      "description": "Separadores plásticos de precisión para junta pareja en pisos y revestimientos.",
+      "unit": "pack",
+      "price": 1650,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 40,
+      "minStockAlert": 10,
+      "variants": [
+        {
+          "id": "2mm",
+          "label": "2 mm (x100 u)",
+          "sku": "CON-CRU-2",
+          "price": 1650,
+          "stockQuantity": 20,
+          "inStock": true
+        },
+        {
+          "id": "3mm",
+          "label": "3 mm (x100 u)",
+          "sku": "CON-CRU-3",
+          "price": 1650,
+          "stockQuantity": 20,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/nivel.jpg"
+    },
+    {
+      "id": "prod-con-010",
+      "sku": "CON-MALLA-FV",
+      "name": "Malla Fibra de Vidrio para Revoques x 1m",
+      "brand": "Industria Argentina",
+      "category": "construccion",
+      "description": "Malla antialcalina 5x5mm para prevenir fisuras en revoques y placas.",
+      "unit": "metro",
+      "price": 2450,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 50,
+      "minStockAlert": 10,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/cemento.jpg"
+    },
+    {
+      "id": "prod-bul-001",
+      "sku": "BUL-AUT-CH",
+      "name": "Tornillo Autoperforante Punta Mecha (Pack x 100)",
+      "brand": "Tel",
+      "category": "buloneria",
+      "description": "Tornillo cabeza hexagonal con arandela vulcanizada para chapas, perfiles y estructuras metálicas.",
+      "unit": "pack",
+      "price": 4800,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 45,
+      "minStockAlert": 10,
+      "variants": [
+        {
+          "id": "10x3-4",
+          "label": "10 x 3/4\" (x100 u)",
+          "sku": "BUL-AUT-1034",
+          "price": 4800,
+          "stockQuantity": 20,
+          "inStock": true
+        },
+        {
+          "id": "12x1-5",
+          "label": "12 x 1 1/2\" (x100 u)",
+          "sku": "BUL-AUT-1215",
+          "price": 6900,
+          "stockQuantity": 15,
+          "inStock": true
+        },
+        {
+          "id": "14x2-5",
+          "label": "14 x 2 1/2\" (x100 u)",
+          "sku": "BUL-AUT-1425",
+          "price": 9800,
+          "stockQuantity": 10,
+          "inStock": true
+        }
+      ],
+      "featured": true,
+      "image": "/img/productos/tornillos.jpg"
+    },
+    {
+      "id": "prod-bul-002",
+      "sku": "BUL-TAR-FIS",
+      "name": "Tarugo Nylon con Tope + Tornillo (Pack x 50)",
+      "brand": "Fischer",
+      "category": "buloneria",
+      "description": "Fijación universal de nylon de alta expansión para ladrillo macizo, hueco y hormigón.",
+      "unit": "pack",
+      "price": 3200,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 60,
+      "minStockAlert": 10,
+      "variants": [
+        {
+          "id": "6mm",
+          "label": "N° 6 (6mm) + Tornillos",
+          "sku": "BUL-FIS-6",
+          "price": 3200,
+          "stockQuantity": 25,
+          "inStock": true
+        },
+        {
+          "id": "8mm",
+          "label": "N° 8 (8mm) + Tornillos",
+          "sku": "BUL-FIS-8",
+          "price": 4400,
+          "stockQuantity": 25,
+          "inStock": true
+        },
+        {
+          "id": "10mm",
+          "label": "N° 10 (10mm) + Tornillos",
+          "sku": "BUL-FIS-10",
+          "price": 6200,
+          "stockQuantity": 10,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/tornillos.jpg"
+    },
+    {
+      "id": "prod-bul-003",
+      "sku": "BUL-VAR-ROS",
+      "name": "Varilla Roscada Zincada x 1 Metro",
+      "brand": "Industria Argentina",
+      "category": "buloneria",
+      "description": "Varilla roscada de acero zincado paso UNC para fijaciones, bandejas y soportes.",
+      "unit": "metro",
+      "price": 2900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 40,
+      "minStockAlert": 8,
+      "variants": [
+        {
+          "id": "1-4",
+          "label": "1/4\" x 1m",
+          "sku": "BUL-VAR-14",
+          "price": 2900,
+          "stockQuantity": 18,
+          "inStock": true
+        },
+        {
+          "id": "3-8",
+          "label": "3/8\" x 1m",
+          "sku": "BUL-VAR-38",
+          "price": 4800,
+          "stockQuantity": 14,
+          "inStock": true
+        },
+        {
+          "id": "1-2",
+          "label": "1/2\" x 1m",
+          "sku": "BUL-VAR-12",
+          "price": 7600,
+          "stockQuantity": 8,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/bulones.jpg"
+    },
+    {
+      "id": "prod-bul-004",
+      "sku": "BUL-DRY-T2",
+      "name": "Tornillo Drywall Punta Aguja Negro (Pack x 200)",
+      "brand": "Tel",
+      "category": "buloneria",
+      "description": "Tornillo fosfatado para placas de yeso y perfilería metálica liviana.",
+      "unit": "pack",
+      "price": 3400,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 45,
+      "minStockAlert": 10,
+      "variants": [
+        {
+          "id": "t1",
+          "label": "T1 (8x9/16\" Punta Aguja)",
+          "sku": "BUL-DRY-T1",
+          "price": 3100,
+          "stockQuantity": 15,
+          "inStock": true
+        },
+        {
+          "id": "t2",
+          "label": "T2 (6x1\" Placa Yeso)",
+          "sku": "BUL-DRY-T2",
+          "price": 3400,
+          "stockQuantity": 20,
+          "inStock": true
+        },
+        {
+          "id": "t3",
+          "label": "T3 (6x1 1/2\" Doble Placa)",
+          "sku": "BUL-DRY-T3",
+          "price": 4600,
+          "stockQuantity": 10,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/tornillos-madera.jpg"
+    },
+    {
+      "id": "prod-bul-005",
+      "sku": "BUL-MECH-HSS",
+      "name": "Mecha Acero Rápido HSS Metal",
+      "brand": "Aliafor / Bosch",
+      "category": "buloneria",
+      "description": "Broca helicoidal rectificada de alta durabilidad para hierro, acero y aluminio.",
+      "unit": "unidad",
+      "price": 1850,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 55,
+      "minStockAlert": 10,
+      "variants": [
+        {
+          "id": "4mm",
+          "label": "4 mm",
+          "sku": "BUL-HSS-4",
+          "price": 1850,
+          "stockQuantity": 15,
+          "inStock": true
+        },
+        {
+          "id": "6mm",
+          "label": "6 mm",
+          "sku": "BUL-HSS-6",
+          "price": 2650,
+          "stockQuantity": 15,
+          "inStock": true
+        },
+        {
+          "id": "8mm",
+          "label": "8 mm",
+          "sku": "BUL-HSS-8",
+          "price": 4100,
+          "stockQuantity": 15,
+          "inStock": true
+        },
+        {
+          "id": "10mm",
+          "label": "10 mm",
+          "sku": "BUL-HSS-10",
+          "price": 5900,
+          "stockQuantity": 10,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/mechas.jpg"
+    },
+    {
+      "id": "prod-bul-006",
+      "sku": "BUL-MECH-WID",
+      "name": "Mecha Widia Cilíndrica para Pared y Hormigón",
+      "brand": "Bosch",
+      "category": "buloneria",
+      "description": "Punta de carburo de tungsteno soldada para perforación con taladro percutor.",
+      "unit": "unidad",
+      "price": 2400,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 45,
+      "minStockAlert": 10,
+      "variants": [
+        {
+          "id": "6mm",
+          "label": "6 mm",
+          "sku": "BUL-WID-6",
+          "price": 2400,
+          "stockQuantity": 20,
+          "inStock": true
+        },
+        {
+          "id": "8mm",
+          "label": "8 mm",
+          "sku": "BUL-WID-8",
+          "price": 3100,
+          "stockQuantity": 15,
+          "inStock": true
+        },
+        {
+          "id": "10mm",
+          "label": "10 mm",
+          "sku": "BUL-WID-10",
+          "price": 4500,
+          "stockQuantity": 10,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/mechas.jpg"
+    },
+    {
+      "id": "prod-bul-007",
+      "sku": "BUL-REM-POP",
+      "name": "Remaches Pop Aluminio (Pack x 100)",
+      "brand": "Industria Argentina",
+      "category": "buloneria",
+      "description": "Remache ciego aluminio-acero de tracción limpia para chapa y carpintería metálica.",
+      "unit": "pack",
+      "price": 2950,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 32,
+      "minStockAlert": 8,
+      "variants": [
+        {
+          "id": "3-2x10",
+          "label": "3.2 x 10 mm",
+          "sku": "BUL-POP-3210",
+          "price": 2950,
+          "stockQuantity": 18,
+          "inStock": true
+        },
+        {
+          "id": "4x12",
+          "label": "4.0 x 12 mm",
+          "sku": "BUL-POP-4012",
+          "price": 3950,
+          "stockQuantity": 14,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/bulones.jpg"
+    },
+    {
+      "id": "prod-bul-008",
+      "sku": "BUL-PREC-NYL",
+      "name": "Precintos Nylon UV Alta Resistencia (Bolsa x 100)",
+      "brand": "Tacsa",
+      "category": "buloneria",
+      "description": "Precintos autoextinguibles con protección solar para instalaciones y sujeciones.",
+      "unit": "pack",
+      "price": 2200,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 50,
+      "minStockAlert": 10,
+      "variants": [
+        {
+          "id": "150mm",
+          "label": "150 x 3.6 mm Negro",
+          "sku": "BUL-PR-150",
+          "price": 2200,
+          "stockQuantity": 20,
+          "inStock": true
+        },
+        {
+          "id": "250mm",
+          "label": "250 x 4.8 mm Negro",
+          "sku": "BUL-PR-250",
+          "price": 4100,
+          "stockQuantity": 20,
+          "inStock": true
+        },
+        {
+          "id": "380mm",
+          "label": "380 x 4.8 mm Negro",
+          "sku": "BUL-PR-380",
+          "price": 6500,
+          "stockQuantity": 10,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/precintos.jpg"
+    },
+    {
+      "id": "prod-bul-009",
+      "sku": "BUL-MAD-DOR",
+      "name": "Tornillo Madera Dorado Cabeza Fresada (x 100)",
+      "brand": "Tel",
+      "category": "buloneria",
+      "description": "Tornillo bicromatado rosca completa para aglomerado, MDF y madera dura.",
+      "unit": "pack",
+      "price": 2800,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 40,
+      "minStockAlert": 10,
+      "variants": [
+        {
+          "id": "4x30",
+          "label": "4.0 x 30 mm",
+          "sku": "BUL-MAD-430",
+          "price": 2800,
+          "stockQuantity": 20,
+          "inStock": true
+        },
+        {
+          "id": "5x50",
+          "label": "5.0 x 50 mm",
+          "sku": "BUL-MAD-550",
+          "price": 4600,
+          "stockQuantity": 20,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/tornillos-madera.jpg"
+    },
+    {
+      "id": "prod-bul-010",
+      "sku": "BUL-BROC-EXP",
+      "name": "Broca / Anclaje Metálico Expansivo (Pack x 10)",
+      "brand": "Fischer",
+      "category": "buloneria",
+      "description": "Anclaje mecánico de acero zincado para cargas pesadas en hormigón.",
+      "unit": "pack",
+      "price": 7400,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 20,
+      "minStockAlert": 5,
+      "variants": [
+        {
+          "id": "3-8",
+          "label": "3/8\" x 2 1/2\"",
+          "sku": "BUL-ANC-38",
+          "price": 7400,
+          "stockQuantity": 12,
+          "inStock": true
+        },
+        {
+          "id": "1-2",
+          "label": "1/2\" x 3\"",
+          "sku": "BUL-ANC-12",
+          "price": 11200,
+          "stockQuantity": 8,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/bulones.jpg"
+    },
+    {
+      "id": "prod-gas-001",
+      "sku": "GAS-OXI-CARGA",
+      "name": "Carga de Oxígeno Industrial en el Momento",
+      "brand": "Ferretería Mica",
+      "category": "gases",
+      "description": "Recarga en el momento en nuestro local de Av. San Martín 2652. Apto soldadura autógena y corte.",
+      "unit": "carga",
+      "price": 0,
+      "priceOnRequest": true,
+      "inStock": true,
+      "stockQuantity": 99,
+      "minStockAlert": 5,
+      "variants": [
+        {
+          "id": "0-5m3",
+          "label": "Tubo 0.5 m³ (Portátil)",
+          "sku": "GAS-OXI-05",
+          "price": 0,
+          "stockQuantity": 99,
+          "inStock": true
+        },
+        {
+          "id": "1m3",
+          "label": "Tubo 1 m³",
+          "sku": "GAS-OXI-1",
+          "price": 0,
+          "stockQuantity": 99,
+          "inStock": true
+        },
+        {
+          "id": "2m3",
+          "label": "Tubo 2 m³ / Industrial",
+          "sku": "GAS-OXI-2",
+          "price": 0,
+          "stockQuantity": 99,
+          "inStock": true
+        }
+      ],
+      "featured": true,
+      "image": "/img/productos/tubo-oxigeno.jpg"
+    },
+    {
+      "id": "prod-gas-002",
+      "sku": "GAS-NIT-CARGA",
+      "name": "Carga de Nitrógeno en el Momento (Refrigeración)",
+      "brand": "Ferretería Mica",
+      "category": "gases",
+      "description": "Recarga inmediata de nitrógeno seco para pruebas de hermeticidad, aire acondicionado y refrigeración.",
+      "unit": "carga",
+      "price": 0,
+      "priceOnRequest": true,
+      "inStock": true,
+      "stockQuantity": 99,
+      "minStockAlert": 5,
+      "variants": [
+        {
+          "id": "1m3",
+          "label": "Tubo 1 m³",
+          "sku": "GAS-NIT-1",
+          "price": 0,
+          "stockQuantity": 99,
+          "inStock": true
+        },
+        {
+          "id": "2m3",
+          "label": "Tubo 2 m³",
+          "sku": "GAS-NIT-2",
+          "price": 0,
+          "stockQuantity": 99,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/tubo-nitrogeno.jpg"
+    },
+    {
+      "id": "prod-gas-003",
+      "sku": "GAS-REG-OXI",
+      "name": "Regulador de Presión Doble Manómetro (Oxígeno / Nitrógeno)",
+      "brand": "Liga / Esab",
+      "category": "gases",
+      "description": "Cuerpo de bronce forjado con dos manómetros de alta precisión y válvula reguladora.",
+      "unit": "unidad",
+      "price": 78500,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 4,
+      "minStockAlert": 1,
+      "variants": [
+        {
+          "id": "oxigeno",
+          "label": "Para Oxígeno",
+          "sku": "GAS-REG-OX",
+          "price": 78500,
+          "stockQuantity": 2,
+          "inStock": true
+        },
+        {
+          "id": "nitrogeno",
+          "label": "Para Nitrógeno (Alta Presión)",
+          "sku": "GAS-REG-NI",
+          "price": 84500,
+          "stockQuantity": 2,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/regulador-gas.jpg"
+    },
+    {
+      "id": "prod-gas-004",
+      "sku": "GAS-MANG-AUT",
+      "name": "Manguera Doble Autógena Reforzada x Metro",
+      "brand": "Industria Argentina",
+      "category": "gases",
+      "description": "Manguera gemela verde/roja para equipos de oxicorte y soldadura autógena.",
+      "unit": "metro",
+      "price": 5400,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 30,
+      "minStockAlert": 6,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/tubo-oxigeno.jpg"
+    },
+    {
+      "id": "prod-san-001",
+      "sku": "SAN-AWA-CANO",
+      "name": "Caño Desagüe Awaduct Polipropileno x 4 Metros",
+      "brand": "Awaduct",
+      "category": "sanitarios",
+      "description": "Caño sanitario con aro de goma O'Ring doble labio, máxima resistencia térmica y química.",
+      "unit": "unidad",
+      "price": 9800,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 32,
+      "minStockAlert": 6,
+      "variants": [
+        {
+          "id": "40mm",
+          "label": "40mm x 4m",
+          "sku": "SAN-AWA-40",
+          "price": 9800,
+          "stockQuantity": 12,
+          "inStock": true
+        },
+        {
+          "id": "63mm",
+          "label": "63mm x 4m",
+          "sku": "SAN-AWA-63",
+          "price": 15900,
+          "stockQuantity": 10,
+          "inStock": true
+        },
+        {
+          "id": "110mm",
+          "label": "110mm x 4m",
+          "sku": "SAN-AWA-110",
+          "price": 29400,
+          "stockQuantity": 10,
+          "inStock": true
+        }
+      ],
+      "featured": true,
+      "image": "/img/productos/cano-pvc.jpg"
+    },
+    {
+      "id": "prod-san-002",
+      "sku": "SAN-AWA-CODO",
+      "name": "Codo Awaduct 87° / 45° con O'Ring",
+      "brand": "Awaduct",
+      "category": "sanitarios",
+      "description": "Accesorio sanitario Awaduct original con junta elástica incorporada.",
+      "unit": "unidad",
+      "price": 1950,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 70,
+      "minStockAlert": 15,
+      "variants": [
+        {
+          "id": "40mm-87",
+          "label": "40mm x 87°30'",
+          "sku": "SAN-COD-40",
+          "price": 1950,
+          "stockQuantity": 30,
+          "inStock": true
+        },
+        {
+          "id": "63mm-87",
+          "label": "63mm x 87°30'",
+          "sku": "SAN-COD-63",
+          "price": 3400,
+          "stockQuantity": 20,
+          "inStock": true
+        },
+        {
+          "id": "110mm-87",
+          "label": "110mm x 87°30'",
+          "sku": "SAN-COD-110",
+          "price": 5900,
+          "stockQuantity": 20,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/sifon-pvc.jpg"
+    },
+    {
+      "id": "prod-san-003",
+      "sku": "SAN-TF-CANO",
+      "name": "Caño Agua Termofusión PN20 x 4 Metros",
+      "brand": "Acqua System / Saladillo",
+      "category": "sanitarios",
+      "description": "Tubo polipropileno copolímero random tipo 3 para agua fría y caliente por termofusión.",
+      "unit": "unidad",
+      "price": 7600,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 28,
+      "minStockAlert": 6,
+      "variants": [
+        {
+          "id": "20mm",
+          "label": "20mm (1/2\") x 4m",
+          "sku": "SAN-TF-20",
+          "price": 7600,
+          "stockQuantity": 16,
+          "inStock": true
+        },
+        {
+          "id": "25mm",
+          "label": "25mm (3/4\") x 4m",
+          "sku": "SAN-TF-25",
+          "price": 11800,
+          "stockQuantity": 12,
+          "inStock": true
+        },
+        {
+          "id": "32mm",
+          "label": "32mm (1\") x 4m",
+          "sku": "SAN-TF-32",
+          "price": 18900,
+          "stockQuantity": 8,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/cano-pvc.jpg"
+    },
+    {
+      "id": "prod-san-004",
+      "sku": "SAN-FLEX-AC",
+      "name": "Chicotillo Flexible Acero Inoxidable 1/2\"",
+      "brand": "Ferretería Mica",
+      "category": "sanitarios",
+      "description": "Flexible mallado de acero inoxidable para griferías, depósitos y termotanques.",
+      "unit": "unidad",
+      "price": 4300,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 24,
+      "minStockAlert": 6,
+      "variants": [
+        {
+          "id": "30cm",
+          "label": "30 cm (1/2\" H-H)",
+          "sku": "SAN-FLX-30",
+          "price": 4300,
+          "stockQuantity": 14,
+          "inStock": true
+        },
+        {
+          "id": "50cm",
+          "label": "50 cm (1/2\" H-H)",
+          "sku": "SAN-FLX-50",
+          "price": 5600,
+          "stockQuantity": 10,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/valvula-esferica.jpg"
+    },
+    {
+      "id": "prod-san-005",
+      "sku": "SAN-AWA-RAM",
+      "name": "Ramal Y / T Awaduct con O'Ring",
+      "brand": "Awaduct",
+      "category": "sanitarios",
+      "description": "Derivación sanitaria original Awaduct con sellado elástico.",
+      "unit": "unidad",
+      "price": 3900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 26,
+      "minStockAlert": 6,
+      "variants": [
+        {
+          "id": "63x40",
+          "label": "63 x 40 mm",
+          "sku": "SAN-RAM-6340",
+          "price": 3900,
+          "stockQuantity": 14,
+          "inStock": true
+        },
+        {
+          "id": "110x63",
+          "label": "110 x 63 mm",
+          "sku": "SAN-RAM-11063",
+          "price": 7800,
+          "stockQuantity": 12,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/sifon-pvc.jpg"
+    },
+    {
+      "id": "prod-san-006",
+      "sku": "SAN-LLAV-ESF",
+      "name": "Llave de Paso Esférica Termofusión / Bronce",
+      "brand": "Acqua System / FV",
+      "category": "sanitarios",
+      "description": "Cierre de cuarto de vuelta con esfera cromada paso total.",
+      "unit": "unidad",
+      "price": 12400,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 18,
+      "minStockAlert": 4,
+      "variants": [
+        {
+          "id": "20mm",
+          "label": "Termofusión 20mm",
+          "sku": "SAN-LLV-TF20",
+          "price": 12400,
+          "stockQuantity": 10,
+          "inStock": true
+        },
+        {
+          "id": "25mm",
+          "label": "Termofusión 25mm",
+          "sku": "SAN-LLV-TF25",
+          "price": 16800,
+          "stockQuantity": 8,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/valvula-esferica.jpg"
+    },
+    {
+      "id": "prod-san-007",
+      "sku": "SAN-TEF-AD",
+      "name": "Cinta Teflón Alta Densidad x 20 Metros",
+      "brand": "Hidro3",
+      "category": "sanitarios",
+      "description": "Cinta PTFE alta densidad para sellado seguro de roscas de agua y gas.",
+      "unit": "unidad",
+      "price": 2100,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 50,
+      "minStockAlert": 10,
+      "variants": [
+        {
+          "id": "1-2",
+          "label": "1/2\" (12mm)",
+          "sku": "SAN-TEF-12",
+          "price": 2100,
+          "stockQuantity": 30,
+          "inStock": true
+        },
+        {
+          "id": "3-4",
+          "label": "3/4\" (19mm)",
+          "sku": "SAN-TEF-34",
+          "price": 3200,
+          "stockQuantity": 20,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/cinta-teflon.jpg"
+    },
+    {
+      "id": "prod-san-008",
+      "sku": "SAN-SIF-EXT",
+      "name": "Sifón Extensible Universal Pileta / Bacha",
+      "brand": "Duke",
+      "category": "sanitarios",
+      "description": "Sifón flexible corrugado con rosca 1 1/2\" y salida 40/50mm anti-olor.",
+      "unit": "unidad",
+      "price": 4950,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 16,
+      "minStockAlert": 4,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/sifon-pvc.jpg"
+    },
+    {
+      "id": "prod-san-009",
+      "sku": "SAN-FLOT-TQ",
+      "name": "Flotante para Tanque de Agua Alta Presión",
+      "brand": "Rotoplas / Latyn",
+      "category": "sanitarios",
+      "description": "Válvula automática con boya regulable de corte rápido y silencioso.",
+      "unit": "unidad",
+      "price": 8700,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 12,
+      "minStockAlert": 3,
+      "variants": [
+        {
+          "id": "1-2",
+          "label": "Rosca 1/2\"",
+          "sku": "SAN-FLT-12",
+          "price": 8700,
+          "stockQuantity": 7,
+          "inStock": true
+        },
+        {
+          "id": "3-4",
+          "label": "Rosca 3/4\"",
+          "sku": "SAN-FLT-34",
+          "price": 9800,
+          "stockQuantity": 5,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/valvula-esferica.jpg"
+    },
+    {
+      "id": "prod-san-010",
+      "sku": "SAN-GRIF-MON",
+      "name": "Grifería Monocomando Cocina Mesada Cuello Alto",
+      "brand": "FV / Peirano",
+      "category": "sanitarios",
+      "description": "Cartucho cerámico de cierre suave, aireador espumante y flexibles incluidos.",
+      "unit": "unidad",
+      "price": 58900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 5,
+      "minStockAlert": 2,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/griferia.jpg"
+    },
+    {
+      "id": "prod-pin-001",
+      "sku": "PIN-MEM-GEL",
+      "name": "Pintura Membrana de Gel con Caucho para Techos",
+      "brand": "Sinteplast / Plavicon",
+      "category": "pinturas",
+      "description": "Impermeabilizante elastomérico de gel con caucho y alta elasticidad para terrazas, losas y techos.",
+      "unit": "kg",
+      "price": 24900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 18,
+      "minStockAlert": 4,
+      "variants": [
+        {
+          "id": "4kg-blanco",
+          "label": "4 Kg Blanco",
+          "sku": "PIN-GEL-4B",
+          "price": 24900,
+          "stockQuantity": 7,
+          "inStock": true
+        },
+        {
+          "id": "10kg-blanco",
+          "label": "10 Kg Blanco",
+          "sku": "PIN-GEL-10B",
+          "price": 54900,
+          "stockQuantity": 6,
+          "inStock": true
+        },
+        {
+          "id": "20kg-blanco",
+          "label": "20 Kg Blanco",
+          "sku": "PIN-GEL-20B",
+          "price": 96500,
+          "stockQuantity": 5,
+          "inStock": true
+        }
+      ],
+      "featured": true,
+      "image": "/img/productos/pintura-latex.jpg"
+    },
+    {
+      "id": "prod-pin-002",
+      "sku": "PIN-LAT-INT",
+      "name": "Látex Interior Profesional Mate Blanco",
+      "brand": "Alba",
+      "category": "pinturas",
+      "description": "Pintura al látex de alto poder cubritivo, lavable y terminación mate uniforme para interiores.",
+      "unit": "litro",
+      "price": 21500,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 16,
+      "minStockAlert": 4,
+      "variants": [
+        {
+          "id": "4l",
+          "label": "4 Litros",
+          "sku": "PIN-LAT-4L",
+          "price": 21500,
+          "stockQuantity": 8,
+          "inStock": true
+        },
+        {
+          "id": "10l",
+          "label": "10 Litros",
+          "sku": "PIN-LAT-10L",
+          "price": 48900,
+          "stockQuantity": 4,
+          "inStock": true
+        },
+        {
+          "id": "20l",
+          "label": "20 Litros",
+          "sku": "PIN-LAT-20L",
+          "price": 86900,
+          "stockQuantity": 4,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/pintura-latex.jpg"
+    },
+    {
+      "id": "prod-pin-003",
+      "sku": "PIN-ROD-LAN",
+      "name": "Rodillo Lana Antigota 22cm + Bandeja",
+      "brand": "El Galgo",
+      "category": "pinturas",
+      "description": "Rodillo profesional de lana sintética antigota para paredes lisas y rugosas.",
+      "unit": "unidad",
+      "price": 8900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 14,
+      "minStockAlert": 4,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/rodillo.jpg"
+    },
+    {
+      "id": "prod-pin-004",
+      "sku": "PIN-ESM-3EN1",
+      "name": "Esmalte Sintético Convertidor 3 en 1",
+      "brand": "Alba / Tersuave",
+      "category": "pinturas",
+      "description": "Antióxido, convertidor y terminación brillante para rejas, portones y carpintería metálica.",
+      "unit": "litro",
+      "price": 14800,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 20,
+      "minStockAlert": 4,
+      "variants": [
+        {
+          "id": "1l-blanco",
+          "label": "1 Litro Blanco",
+          "sku": "PIN-3N1-1B",
+          "price": 14800,
+          "stockQuantity": 10,
+          "inStock": true
+        },
+        {
+          "id": "1l-negro",
+          "label": "1 Litro Negro",
+          "sku": "PIN-3N1-1N",
+          "price": 14800,
+          "stockQuantity": 6,
+          "inStock": true
+        },
+        {
+          "id": "4l-blanco",
+          "label": "4 Litros Blanco",
+          "sku": "PIN-3N1-4B",
+          "price": 51900,
+          "stockQuantity": 4,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/pintura-latex.jpg"
+    },
+    {
+      "id": "prod-pin-005",
+      "sku": "PIN-LAT-EXT",
+      "name": "Látex Frentes Exterior Impermeabilizante",
+      "brand": "Sinteplast",
+      "category": "pinturas",
+      "description": "Alta resistencia a la intemperie, rayos UV y hongos para fachadas y medianeras.",
+      "unit": "litro",
+      "price": 27900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 12,
+      "minStockAlert": 3,
+      "variants": [
+        {
+          "id": "4l",
+          "label": "4 Litros",
+          "sku": "PIN-EXT-4L",
+          "price": 27900,
+          "stockQuantity": 6,
+          "inStock": true
+        },
+        {
+          "id": "20l",
+          "label": "20 Litros",
+          "sku": "PIN-EXT-20L",
+          "price": 112000,
+          "stockQuantity": 6,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/pintura-latex.jpg"
+    },
+    {
+      "id": "prod-pin-006",
+      "sku": "PIN-END-INT",
+      "name": "Enduido Plástico Interior / Exterior",
+      "brand": "Andina / Sinteplast",
+      "category": "pinturas",
+      "description": "Pasta niveladora lista para usar de fácil lijado antes de pintar.",
+      "unit": "litro",
+      "price": 7400,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 18,
+      "minStockAlert": 4,
+      "variants": [
+        {
+          "id": "1l",
+          "label": "1 Litro",
+          "sku": "PIN-END-1L",
+          "price": 7400,
+          "stockQuantity": 8,
+          "inStock": true
+        },
+        {
+          "id": "4l",
+          "label": "4 Litros",
+          "sku": "PIN-END-4L",
+          "price": 21800,
+          "stockQuantity": 6,
+          "inStock": true
+        },
+        {
+          "id": "10l",
+          "label": "10 Litros",
+          "sku": "PIN-END-10L",
+          "price": 46500,
+          "stockQuantity": 4,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/rodillo.jpg"
+    },
+    {
+      "id": "prod-pin-007",
+      "sku": "PIN-DIL-AGU",
+      "name": "Aguarrás Mineral / Thinner Sello de Oro",
+      "brand": "Hydra",
+      "category": "pinturas",
+      "description": "Solvente de pureza controlada para dilución de sintéticos y limpieza de pinceles.",
+      "unit": "litro",
+      "price": 4200,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 30,
+      "minStockAlert": 6,
+      "variants": [
+        {
+          "id": "aguarras-1l",
+          "label": "Aguarrás 1 L",
+          "sku": "PIN-AGU-1L",
+          "price": 4200,
+          "stockQuantity": 16,
+          "inStock": true
+        },
+        {
+          "id": "thinner-1l",
+          "label": "Thinner Sello Oro 1 L",
+          "sku": "PIN-THN-1L",
+          "price": 5600,
+          "stockQuantity": 14,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/pincel.jpg"
+    },
+    {
+      "id": "prod-pin-008",
+      "sku": "PIN-CINT-ENM",
+      "name": "Cinta de Enmascarar Pintor x 40 Metros",
+      "brand": "3M / Doble A",
+      "category": "pinturas",
+      "description": "Cinta papel crepado de despegue limpio sin dejar residuos de adhesivo.",
+      "unit": "unidad",
+      "price": 1950,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 45,
+      "minStockAlert": 10,
+      "variants": [
+        {
+          "id": "18mm",
+          "label": "18 mm",
+          "sku": "PIN-ENM-18",
+          "price": 1950,
+          "stockQuantity": 20,
+          "inStock": true
+        },
+        {
+          "id": "24mm",
+          "label": "24 mm",
+          "sku": "PIN-ENM-24",
+          "price": 2550,
+          "stockQuantity": 15,
+          "inStock": true
+        },
+        {
+          "id": "48mm",
+          "label": "48 mm",
+          "sku": "PIN-ENM-48",
+          "price": 4800,
+          "stockQuantity": 10,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/cinta-enmascarar.jpg"
+    },
+    {
+      "id": "prod-pin-009",
+      "sku": "PIN-PINC-N20",
+      "name": "Pincel Cerda Negra Profesional",
+      "brand": "El Galgo",
+      "category": "pinturas",
+      "description": "Virola metálica inoxidable y cerda seleccionada para esmaltes y látex.",
+      "unit": "unidad",
+      "price": 3100,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 34,
+      "minStockAlert": 8,
+      "variants": [
+        {
+          "id": "n10",
+          "label": "N° 10 (25mm)",
+          "sku": "PIN-PNC-10",
+          "price": 3100,
+          "stockQuantity": 12,
+          "inStock": true
+        },
+        {
+          "id": "n15",
+          "label": "N° 15 (38mm)",
+          "sku": "PIN-PNC-15",
+          "price": 4300,
+          "stockQuantity": 12,
+          "inStock": true
+        },
+        {
+          "id": "n25",
+          "label": "N° 25 (63mm)",
+          "sku": "PIN-PNC-25",
+          "price": 6800,
+          "stockQuantity": 10,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/pincel.jpg"
+    },
+    {
+      "id": "prod-ele-001",
+      "sku": "ELE-CAB-NORM",
+      "name": "Cable Unipolar Normalizado IRAM 247-3 (Rollo x 100m)",
+      "brand": "Prysmian / Kalop",
+      "category": "electricidad",
+      "description": "Cable de cobre electrolítico flexible ignífugo normalizado para instalaciones domiciliarias e industriales.",
+      "unit": "unidad",
+      "price": 46500,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 19,
+      "minStockAlert": 4,
+      "variants": [
+        {
+          "id": "1-5mm",
+          "label": "1.5 mm² x 100m",
+          "sku": "ELE-CAB-15",
+          "price": 46500,
+          "stockQuantity": 7,
+          "inStock": true
+        },
+        {
+          "id": "2-5mm",
+          "label": "2.5 mm² x 100m",
+          "sku": "ELE-CAB-25",
+          "price": 74900,
+          "stockQuantity": 8,
+          "inStock": true
+        },
+        {
+          "id": "4mm",
+          "label": "4.0 mm² x 100m",
+          "sku": "ELE-CAB-40",
+          "price": 116000,
+          "stockQuantity": 4,
+          "inStock": true
+        }
+      ],
+      "featured": true,
+      "image": "/img/productos/cable-electrico.jpg"
+    },
+    {
+      "id": "prod-ele-002",
+      "sku": "ELE-TER-BIP",
+      "name": "Interruptor Termomagnético Bipolar DIN 4.5kA",
+      "brand": "Schneider / Sica",
+      "category": "electricidad",
+      "description": "Llave térmica bipolar curva C certificada para protección de circuitos.",
+      "unit": "unidad",
+      "price": 11900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 28,
+      "minStockAlert": 6,
+      "variants": [
+        {
+          "id": "16a",
+          "label": "2 x 16A",
+          "sku": "ELE-TER-16",
+          "price": 11900,
+          "stockQuantity": 10,
+          "inStock": true
+        },
+        {
+          "id": "20a",
+          "label": "2 x 20A",
+          "sku": "ELE-TER-20",
+          "price": 11900,
+          "stockQuantity": 10,
+          "inStock": true
+        },
+        {
+          "id": "25a",
+          "label": "2 x 25A",
+          "sku": "ELE-TER-25",
+          "price": 12800,
+          "stockQuantity": 8,
+          "inStock": true
+        },
+        {
+          "id": "32a",
+          "label": "2 x 32A",
+          "sku": "ELE-TER-32",
+          "price": 13600,
+          "stockQuantity": 6,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/termica.jpg"
+    },
+    {
+      "id": "prod-ele-003",
+      "sku": "ELE-DIS-40",
+      "name": "Disyuntor Diferencial Bipolar 2x40A 30mA",
+      "brand": "Sica",
+      "category": "electricidad",
+      "description": "Interruptor diferencial de alta sensibilidad para protección contra contactos eléctricos.",
+      "unit": "unidad",
+      "price": 34500,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 9,
+      "minStockAlert": 3,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/termica.jpg"
+    },
+    {
+      "id": "prod-ele-004",
+      "sku": "ELE-LED-12W",
+      "name": "Lámpara Bulbo LED A60 Rosca E27",
+      "brand": "Philips",
+      "category": "electricidad",
+      "description": "Iluminación LED de bajo consumo y encendido instantáneo en luz fría o cálida.",
+      "unit": "unidad",
+      "price": 2650,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 55,
+      "minStockAlert": 10,
+      "variants": [
+        {
+          "id": "9w-fria",
+          "label": "9W Luz Fría",
+          "sku": "ELE-LED-9F",
+          "price": 2650,
+          "stockQuantity": 30,
+          "inStock": true
+        },
+        {
+          "id": "12w-fria",
+          "label": "12W Luz Fría",
+          "sku": "ELE-LED-12F",
+          "price": 3450,
+          "stockQuantity": 25,
+          "inStock": true
+        },
+        {
+          "id": "15w-calida",
+          "label": "15W Luz Cálida",
+          "sku": "ELE-LED-15C",
+          "price": 4300,
+          "stockQuantity": 15,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/lampara-led.jpg"
+    },
+    {
+      "id": "prod-ele-005",
+      "sku": "ELE-TPR-MTR",
+      "name": "Cable Tipo Taller TPR Normalizado x Metro",
+      "brand": "Prysmian",
+      "category": "electricidad",
+      "description": "Cable envainado flexible de alta resistencia mecánica para prolongadores y máquinas.",
+      "unit": "metro",
+      "price": 1950,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 70,
+      "minStockAlert": 15,
+      "variants": [
+        {
+          "id": "2x1-5",
+          "label": "2 x 1.5 mm²",
+          "sku": "ELE-TPR-215",
+          "price": 1950,
+          "stockQuantity": 40,
+          "inStock": true
+        },
+        {
+          "id": "3x2-5",
+          "label": "3 x 2.5 mm²",
+          "sku": "ELE-TPR-325",
+          "price": 3600,
+          "stockQuantity": 30,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/cable-electrico.jpg"
+    },
+    {
+      "id": "prod-ele-006",
+      "sku": "ELE-TOMA-DOB",
+      "name": "Conjunto Toma Doble 10A + Bastidor y Tapa Armada",
+      "brand": "Jeluz / Cambre",
+      "category": "electricidad",
+      "description": "Módulo completo armado para caja rectangular estándar con bornes normalizados.",
+      "unit": "unidad",
+      "price": 5400,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 34,
+      "minStockAlert": 8,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/zapatilla.jpg"
+    },
+    {
+      "id": "prod-ele-007",
+      "sku": "ELE-REF-50W",
+      "name": "Reflector LED Exterior IP65 Luz Fría",
+      "brand": "Macroled",
+      "category": "electricidad",
+      "description": "Proyector estanco de aluminio inyectado para patios, frentes y obras.",
+      "unit": "unidad",
+      "price": 13500,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 16,
+      "minStockAlert": 4,
+      "variants": [
+        {
+          "id": "30w",
+          "label": "30W",
+          "sku": "ELE-REF-30",
+          "price": 13500,
+          "stockQuantity": 8,
+          "inStock": true
+        },
+        {
+          "id": "50w",
+          "label": "50W",
+          "sku": "ELE-REF-50",
+          "price": 18900,
+          "stockQuantity": 8,
+          "inStock": true
+        },
+        {
+          "id": "100w",
+          "label": "100W",
+          "sku": "ELE-REF-100",
+          "price": 31500,
+          "stockQuantity": 4,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/reflector-led.jpg"
+    },
+    {
+      "id": "prod-ele-008",
+      "sku": "ELE-CINT-20",
+      "name": "Cinta Aisladora PVC Ignífuga 20 Metros",
+      "brand": "Tacsa",
+      "category": "electricidad",
+      "description": "Cinta aislante profesional negra 0.18mm con certificación IRAM.",
+      "unit": "unidad",
+      "price": 2300,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 48,
+      "minStockAlert": 10,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/cinta-aisladora.jpg"
+    },
+    {
+      "id": "prod-ele-009",
+      "sku": "ELE-CORR-25",
+      "name": "Caño Corrugado Ignífugo PVC Rollo x 25m",
+      "brand": "Tubelectric",
+      "category": "electricidad",
+      "description": "Caño flexible autoextinguible blanco para instalaciones eléctricas embutidas.",
+      "unit": "unidad",
+      "price": 11200,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 15,
+      "minStockAlert": 4,
+      "variants": [
+        {
+          "id": "3-4",
+          "label": "3/4\" (20mm) x 25m",
+          "sku": "ELE-COR-34",
+          "price": 11200,
+          "stockQuantity": 9,
+          "inStock": true
+        },
+        {
+          "id": "7-8",
+          "label": "7/8\" (22mm) x 25m",
+          "sku": "ELE-COR-78",
+          "price": 13900,
+          "stockQuantity": 6,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/cano-pvc.jpg"
+    },
+    {
+      "id": "prod-ele-010",
+      "sku": "ELE-ZAP-5T",
+      "name": "Zapatilla Prolongador 5 Tomas con Térmica 1.5m",
+      "brand": "Kalop",
+      "category": "electricidad",
+      "description": "Regleta multipropósito con protección contra sobrecargas e interruptor luminoso.",
+      "unit": "unidad",
+      "price": 14200,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 14,
+      "minStockAlert": 4,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/zapatilla.jpg"
+    },
+    {
+      "id": "prod-herj-001",
+      "sku": "HRJ-CER-604",
+      "name": "Cerradura Doble Paleta Reforzada",
+      "brand": "Prive / Kallay",
+      "category": "herrajes",
+      "description": "Cerradura de seguridad doble paleta con frente de acero inoxidable y 2 llaves.",
+      "unit": "unidad",
+      "price": 26800,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 8,
+      "minStockAlert": 2,
+      "variants": [],
+      "featured": true,
+      "image": "/img/productos/cerradura.jpg"
+    },
+    {
+      "id": "prod-herj-002",
+      "sku": "HRJ-SIL-280",
+      "name": "Sellador Silicona Neutra Antihongo 280ml",
+      "brand": "Siloc",
+      "category": "herrajes",
+      "description": "Sellador elástico de curado neutro para vidrios, aluminio, sanitarios y mesadas.",
+      "unit": "unidad",
+      "price": 6900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 24,
+      "minStockAlert": 5,
+      "variants": [
+        {
+          "id": "transparente",
+          "label": "Transparente 280ml",
+          "sku": "HRJ-SIL-TR",
+          "price": 6900,
+          "stockQuantity": 14,
+          "inStock": true
+        },
+        {
+          "id": "blanco",
+          "label": "Blanco 280ml",
+          "sku": "HRJ-SIL-BL",
+          "price": 6900,
+          "stockQuantity": 10,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/silicona.jpg"
+    },
+    {
+      "id": "prod-herj-003",
+      "sku": "HRJ-CAN-50",
+      "name": "Candado Bronce Macizo Doble Traba",
+      "brand": "Sekur",
+      "category": "herrajes",
+      "description": "Cuerpo de bronce macizo y arco de acero templado con 3 llaves.",
+      "unit": "unidad",
+      "price": 9500,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 15,
+      "minStockAlert": 3,
+      "variants": [
+        {
+          "id": "40mm",
+          "label": "40 mm",
+          "sku": "HRJ-CAN-40",
+          "price": 9500,
+          "stockQuantity": 9,
+          "inStock": true
+        },
+        {
+          "id": "50mm",
+          "label": "50 mm",
+          "sku": "HRJ-CAN-50",
+          "price": 13400,
+          "stockQuantity": 6,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/candado.jpg"
+    },
+    {
+      "id": "prod-herj-004",
+      "sku": "HRJ-BIS-MUN",
+      "name": "Bisagra Munición Acero Reforzada (Par)",
+      "brand": "Bronzen",
+      "category": "herrajes",
+      "description": "Juego de bisagras con rulemán para puertas pesadas de madera o chapa.",
+      "unit": "pack",
+      "price": 8400,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 16,
+      "minStockAlert": 4,
+      "variants": [
+        {
+          "id": "90mm",
+          "label": "90 mm Zincada",
+          "sku": "HRJ-BIS-90",
+          "price": 8400,
+          "stockQuantity": 10,
+          "inStock": true
+        },
+        {
+          "id": "100mm",
+          "label": "100 mm Acero Inox",
+          "sku": "HRJ-BIS-100",
+          "price": 12900,
+          "stockQuantity": 6,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/bisagra.jpg"
+    },
+    {
+      "id": "prod-herj-005",
+      "sku": "HRJ-GUA-NIT",
+      "name": "Guantes de Trabajo Palma Nitrilo / Moteado",
+      "brand": "Libus / Pampero",
+      "category": "herrajes",
+      "description": "Guantes resistentes a la abrasión con agarre firme para carga, montaje y taller.",
+      "unit": "unidad",
+      "price": 2400,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 40,
+      "minStockAlert": 8,
+      "variants": [
+        {
+          "id": "moteado",
+          "label": "Algodón Moteado",
+          "sku": "HRJ-GUA-MOT",
+          "price": 1800,
+          "stockQuantity": 20,
+          "inStock": true
+        },
+        {
+          "id": "nitrilo",
+          "label": "Palma Nitrilo (Talle 9/10)",
+          "sku": "HRJ-GUA-NIT",
+          "price": 2400,
+          "stockQuantity": 20,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/guantes.jpg"
+    },
+    {
+      "id": "prod-herj-006",
+      "sku": "HRJ-POX-10M",
+      "name": "Adhesivo Epoxi Dos Componentes Poxipol 10 Min",
+      "brand": "Poxipol",
+      "category": "herrajes",
+      "description": "Soldadura plástica en frío de alta resistencia para metal, vidrio, cerámica y madera.",
+      "unit": "unidad",
+      "price": 6200,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 22,
+      "minStockAlert": 5,
+      "variants": [
+        {
+          "id": "70g-gris",
+          "label": "Metálico Gris 70g",
+          "sku": "HRJ-POX-70G",
+          "price": 6200,
+          "stockQuantity": 12,
+          "inStock": true
+        },
+        {
+          "id": "70g-trans",
+          "label": "Transparente 70g",
+          "sku": "HRJ-POX-70T",
+          "price": 6500,
+          "stockQuantity": 10,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/silicona.jpg"
+    },
+    {
+      "id": "prod-herj-007",
+      "sku": "HRJ-ANT-SEG",
+      "name": "Antiparra Seguridad Transparente Antiempañante",
+      "brand": "Libus",
+      "category": "herrajes",
+      "description": "Lente de policarbonato con filtro UV y protección lateral para amoladora y corte.",
+      "unit": "unidad",
+      "price": 4100,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 20,
+      "minStockAlert": 5,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/antiparras.jpg"
+    },
+    {
+      "id": "prod-jar-001",
+      "sku": "JAR-MAN-12",
+      "name": "Manguera Riego Reforzada Tricapa 1/2\"",
+      "brand": "Duraflex",
+      "category": "jardineria",
+      "description": "Manguera con malla de refuerzo antitorsión y filtro UV para jardín y limpieza.",
+      "unit": "unidad",
+      "price": 18900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 12,
+      "minStockAlert": 3,
+      "variants": [
+        {
+          "id": "15m",
+          "label": "Rollo 15 Metros",
+          "sku": "JAR-MAN-15",
+          "price": 18900,
+          "stockQuantity": 7,
+          "inStock": true
+        },
+        {
+          "id": "25m",
+          "label": "Rollo 25 Metros",
+          "sku": "JAR-MAN-25",
+          "price": 29500,
+          "stockQuantity": 5,
+          "inStock": true
+        }
+      ],
+      "featured": true,
+      "image": "/img/productos/manguera.jpg"
+    },
+    {
+      "id": "prod-jar-002",
+      "sku": "JAR-PAL-ANC",
+      "name": "Pala Ancha Forjada Cabo Largo",
+      "brand": "Gherardi",
+      "category": "jardineria",
+      "description": "Hoja de acero estampado tratado térmicamente con cabo de madera estacionada.",
+      "unit": "unidad",
+      "price": 28400,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 7,
+      "minStockAlert": 2,
+      "variants": [
+        {
+          "id": "ancha",
+          "label": "Pala Ancha",
+          "sku": "JAR-PAL-AN",
+          "price": 28400,
+          "stockQuantity": 4,
+          "inStock": true
+        },
+        {
+          "id": "punta",
+          "label": "Pala de Punta",
+          "sku": "JAR-PAL-PT",
+          "price": 29200,
+          "stockQuantity": 3,
+          "inStock": true
+        }
+      ],
+      "featured": false,
+      "image": "/img/productos/pala.jpg"
+    },
+    {
+      "id": "prod-jar-003",
+      "sku": "JAR-TIJ-POD",
+      "name": "Tijera de Podar Bypass Acero Templado 8\"",
+      "brand": "Tramontina",
+      "category": "jardineria",
+      "description": "Hoja templada de corte limpio con traba de seguridad y mango anatómico.",
+      "unit": "unidad",
+      "price": 13800,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 10,
+      "minStockAlert": 3,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/tijera-podar.jpg"
+    },
+    {
+      "id": "prod-jar-004",
+      "sku": "JAR-PICO-AC",
+      "name": "Set Lanza + Acoples Rápidos 1/2\" para Manguera",
+      "brand": "Tramontina",
+      "category": "jardineria",
+      "description": "Incluye pico regulable de chorro/lluvia, dos acoples rápidos y adaptador de canilla.",
+      "unit": "pack",
+      "price": 7900,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 18,
+      "minStockAlert": 4,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/manguera.jpg"
+    },
+    {
+      "id": "prod-jar-005",
+      "sku": "JAR-RAST-14",
+      "name": "Rastrillo Acero 14 Dientes con Cabo",
+      "brand": "Gherardi",
+      "category": "jardineria",
+      "description": "Estructura de acero estampado de alta rigidez para nivelado y limpieza de terreno.",
+      "unit": "unidad",
+      "price": 16500,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 8,
+      "minStockAlert": 2,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/rastrillo.jpg"
+    },
+    {
+      "id": "prod-jar-006",
+      "sku": "JAR-BORD-500",
+      "name": "Bordeadora Eléctrica 500W + Tanza",
+      "brand": "Black+Decker",
+      "category": "jardineria",
+      "description": "Motor 500W con cabezal de doble salida y mango auxiliar regulable.",
+      "unit": "unidad",
+      "price": 74500,
+      "priceOnRequest": false,
+      "inStock": true,
+      "stockQuantity": 4,
+      "minStockAlert": 1,
+      "variants": [],
+      "featured": false,
+      "image": "/img/productos/manguera.jpg"
+    }
+  ],
+  "orders": [],
+  "customPasswords": {}
+}
