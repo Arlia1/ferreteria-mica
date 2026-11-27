@@ -73,8 +73,8 @@ export function formatPrice(amount: number): string {
  * en local o sin credenciales comprime a WebP (max 800px) para guardar sin dependencias.
  */
 export async function uploadToCloudinary(file: File): Promise<{ url: string; mode: 'cloudinary' | 'local' }> {
-  const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
-  const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
+  const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || 'gopc60ca';
+  const uploadPreset = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || 'ferrreteria-mica';
 
   if (cloudName && uploadPreset) {
     try {
