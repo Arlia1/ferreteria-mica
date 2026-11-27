@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Administración y Comandas | Ferretería Mica',
+  title: 'Administración y Comandas',
+  alternates: {
+    canonical: 'https://ferreteria-mica.vercel.app/admin',
+  },
   robots: { index: false, follow: false },
 };
 

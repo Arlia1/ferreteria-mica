@@ -5,12 +5,12 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: ['/', '/catalogo', '/servicios', '/nosotros', '/contacto', '/llms.txt'],
+        allow: ['/', '/catalogo', '/servicios', '/nosotros', '/contacto', '/llms.txt', '/llms-full.txt'],
         disallow: ['/admin', '/api/'],
       },
       {
         userAgent: ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'ClaudeBot', 'PerplexityBot', 'Google-Extended'],
-        allow: ['/', '/catalogo', '/servicios', '/nosotros', '/contacto', '/llms.txt'],
+        allow: ['/', '/catalogo', '/servicios', '/nosotros', '/contacto', '/llms.txt', '/llms-full.txt'],
         disallow: ['/admin', '/api/'],
       },
     ],

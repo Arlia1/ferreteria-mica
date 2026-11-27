@@ -197,6 +197,7 @@ export default function HomePage() {
             width={640}
             height={480}
             loading="lazy"
+            decoding="async"
             className="w-full h-full min-h-[240px] object-cover"
           />
         </div>
@@ -252,6 +253,7 @@ export default function HomePage() {
                   width={64}
                   height={64}
                   loading="lazy"
+                  decoding="async"
                   aria-hidden="true"
                   className="w-16 h-16 rounded-lg object-cover shrink-0 bg-slate-950"
                 />

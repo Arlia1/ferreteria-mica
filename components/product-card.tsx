@@ -49,6 +49,7 @@ export default function ProductCard({ product }: { product: Product }) {
             width={480}
             height={300}
             loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover"
           />
           <div className="absolute top-2.5 left-2.5 flex flex-wrap gap-1.5">

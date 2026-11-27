@@ -1,18 +1,37 @@
 import type { Metadata } from 'next';
 import seedStore from '@/data/store.json';
 
+const BASE_URL = 'https://ferreteria-mica.vercel.app';
+
 export const metadata: Metadata = {
-  title: 'Catálogo Online con Precios',
+  title: 'Catálogo con Precios',
   description:
-    'Explorá precios y stock actualizado en herramientas, bulonería, sanitarios Awaduct, pinturas con caucho, electricidad y carga de oxígeno/nitrógeno en Quilmes Oeste.',
+    'Buscá precios y stock de herramientas, bulonería, sanitarios Awaduct, electricidad y pinturas en Quilmes Oeste. Armá tu pedido por WhatsApp.',
   alternates: {
-    canonical: 'https://ferreteria-mica.vercel.app/catalogo',
+    canonical: `${BASE_URL}/catalogo`,
   },
   openGraph: {
-    title: 'Catálogo Online con Precios | Ferretería Mica',
+    type: 'website',
+    locale: 'es_AR',
+    siteName: 'Ferretería Mica',
+    title: 'Catálogo con Precios | Ferretería Mica',
     description:
-      'Consultá precios y medidas disponibles en Ferretería Mica y armá tu pedido por WhatsApp con envío en el día.',
-    url: 'https://ferreteria-mica.vercel.app/catalogo',
+      'Precios y stock en vivo en Quilmes Oeste. Herramientas, bulonería, sanitarios Awaduct y pinturas con envío en el día.',
+    url: `${BASE_URL}/catalogo`,
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'Catálogo Online con Precios | Ferretería Mica',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Catálogo con Precios | Ferretería Mica',
+    description: 'Precios actualizados, variantes y pedido directo por WhatsApp en Quilmes Oeste.',
+    images: ['/opengraph-image'],
   },
 };
 
@@ -21,8 +40,8 @@ export default function CatalogoLayout({ children }: { children: React.ReactNode
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://ferreteria-mica.vercel.app/' },
-      { '@type': 'ListItem', position: 2, name: 'Catálogo Online', item: 'https://ferreteria-mica.vercel.app/catalogo' },
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${BASE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Catálogo Online', item: `${BASE_URL}/catalogo` },
     ],
   };
 
@@ -31,22 +50,44 @@ export default function CatalogoLayout({ children }: { children: React.ReactNode
     '@type': 'ItemList',
     name: 'Catálogo de Productos Ferretería Mica',
     numberOfItems: seedStore.products.length,
-    itemListElement: seedStore.products.slice(0, 20).map((p, idx) => ({
-      '@type': 'ListItem',
-      position: idx + 1,
-      item: {
-        '@type': 'Product',
-        name: p.name,
-        sku: p.sku,
-        brand: { '@type': 'Brand', name: p.brand },
-        offers: {
-          '@type': 'Offer',
-          priceCurrency: 'ARS',
-          price: p.priceOnRequest ? undefined : p.price,
-          availability: p.inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+    itemListElement: seedStore.products.map((p, idx) => {
+      const imagePath = p.image || '/img/productos/amoladora.jpg';
+      const productUrl = `${BASE_URL}/catalogo?q=${encodeURIComponent(p.sku || p.name)}`;
+      const availability = p.inStock ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock';
+
+      return {
+        '@type': 'ListItem',
+        position: idx + 1,
+        item: {
+          '@type': 'Product',
+          name: p.name,
+          sku: p.sku,
+          description: p.description || `${p.name} - ${p.brand} en Ferretería Mica, Quilmes Oeste.`,
+          image: imagePath.startsWith('http') ? imagePath : `${BASE_URL}${imagePath}`,
+          url: productUrl,
+          brand: { '@type': 'Brand', name: p.brand },
+          offers: p.priceOnRequest
+            ? {
+                '@type': 'Offer',
+                availability,
+                url: productUrl,
+                priceSpecification: {
+                  '@type': 'PriceSpecification',
+                  priceCurrency: 'ARS',
+                },
+                seller: { '@id': `${BASE_URL}/#store` },
+              }
+            : {
+                '@type': 'Offer',
+                priceCurrency: 'ARS',
+                price: p.price,
+                availability,
+                url: productUrl,
+                seller: { '@id': `${BASE_URL}/#store` },
+              },
         },
-      },
-    })),
+      };
+    }),
   };
 
   return (

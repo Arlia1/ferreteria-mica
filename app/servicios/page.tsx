@@ -42,6 +42,7 @@ export default function ServiciosPage() {
                     width={640}
                     height={360}
                     loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover"
                   />
                 </div>

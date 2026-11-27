@@ -1,15 +1,42 @@
 import type { Metadata } from 'next';
 
+const BASE_URL = 'https://ferreteria-mica.vercel.app';
+
 export const metadata: Metadata = {
-  title: 'Nosotros, Horarios y Preguntas Frecuentes',
+  title: 'Nosotros y Horarios',
   description:
-    'Conocé Ferretería Mica en Av. San Martín 2652, Quilmes Oeste. Más de 25 años de trayectoria, horarios corridos de lunes a domingo, envíos en el día y medios de pago.',
+    'Más de 25 años en Av. San Martín 2652, Quilmes Oeste. Conocé nuestros horarios de lunes a domingo, medios de pago, envíos en el día y preguntas.',
   alternates: {
-    canonical: 'https://ferreteria-mica.vercel.app/nosotros',
+    canonical: `${BASE_URL}/nosotros`,
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'es_AR',
+    siteName: 'Ferretería Mica',
+    title: 'Nosotros y Horarios | Ferretería Mica',
+    description:
+      'Más de 25 años en Quilmes Oeste. Horarios corridos lunes a domingo, pagos en efectivo/débito/transferencia y envíos en el día.',
+    url: `${BASE_URL}/nosotros`,
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Nosotros Ferretería Mica Quilmes Oeste' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nosotros y Horarios | Ferretería Mica',
+    description: 'Trayectoria, horarios de lunes a domingo, medios de pago y preguntas frecuentes.',
+    images: ['/opengraph-image'],
   },
 };
 
 export default function NosotrosLayout({ children }: { children: React.ReactNode }) {
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${BASE_URL}/` },
+      { '@type': 'ListItem', position: 2, name: 'Nosotros y Horarios', item: `${BASE_URL}/nosotros` },
+    ],
+  };
+
   const faqLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -51,6 +78,7 @@ export default function NosotrosLayout({ children }: { children: React.ReactNode
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       {children}
     </>

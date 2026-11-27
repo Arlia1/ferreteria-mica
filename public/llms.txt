@@ -25,6 +25,7 @@
 ## URLs Principales
 - [Inicio](https://ferreteria-mica.vercel.app/)
 - [Catálogo Online con Precios](https://ferreteria-mica.vercel.app/catalogo)
+- [Catálogo Completo en Texto (LLMs)](https://ferreteria-mica.vercel.app/llms-full.txt)
 - [Rubros y Servicios](https://ferreteria-mica.vercel.app/servicios)
 - [Sobre Nosotros y Preguntas Frecuentes](https://ferreteria-mica.vercel.app/nosotros)
 - [Contacto y Mapa](https://ferreteria-mica.vercel.app/contacto)

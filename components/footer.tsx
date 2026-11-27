@@ -87,7 +87,7 @@ export default function Footer() {
           {/* Enlaces reales de tienda y rubros */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div>
-              <h4 className="text-amber-400 font-bold mb-3 text-sm">Secciones</h4>
+              <h2 className="text-amber-400 font-bold mb-3 text-sm">Secciones</h2>
               <ul className="space-y-1.5 text-sm text-slate-300">
                 <li>
                   <Link href="/" className="hover:text-amber-400 transition inline-block py-1">
@@ -118,7 +118,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h4 className="text-amber-400 font-bold mb-3 text-sm">Catálogo por Rubro</h4>
+              <h2 className="text-amber-400 font-bold mb-3 text-sm">Catálogo por Rubro</h2>
               <ul className="grid grid-cols-1 gap-1.5 text-sm text-slate-300">
                 {categories.map((cat) => (
                   <li key={cat.id}>

@@ -1,12 +1,13 @@
 'use client';
 
 import React, { Suspense, useMemo, useState } from 'react';
+import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { Search, SlidersHorizontal, X, PackageSearch, MessageCircle } from 'lucide-react';
 import { useStore } from '@/context/store-context';
 import ProductCard from '@/components/product-card';
 import { getWhatsAppUrl } from '@/lib/whatsapp';
-import { STORE_INFO } from '@/lib/utils';
+import { DEFAULT_CATEGORIES, STORE_INFO } from '@/lib/utils';
 
 const PAGE_SIZE = 24;
 
@@ -89,14 +90,8 @@ function CatalogoContent() {
   }
 
   return (
-    <div className="pt-28 md:pt-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-        <div>
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Catálogo Online con Precios</h1>
-          <p className="text-slate-300 text-sm sm:text-base mt-1">
-            Buscá por producto, código SKU, marca o rubro. Armá tu pedido y envialo directo por WhatsApp.
-          </p>
-        </div>
+    <div className="space-y-8">
+      <div className="flex justify-end">
         <div className="text-xs sm:text-sm text-slate-300 font-medium">
           Mostrando <strong className="text-white">{displayedProducts.length}</strong> de{' '}
           <strong className="text-amber-400">{filteredProducts.length}</strong> artículos
@@ -275,6 +270,7 @@ function CatalogoContent() {
         </div>
       ) : (
         <>
+          <h2 className="sr-only">Listado de productos del catálogo</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {displayedProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
@@ -300,14 +296,34 @@ function CatalogoContent() {
 
 export default function CatalogoPage() {
   return (
-    <Suspense
-      fallback={
-        <div className="pt-32 max-w-7xl mx-auto px-4 text-slate-300" role="status">
-          Cargando catálogo online...
-        </div>
-      }
-    >
-      <CatalogoContent />
-    </Suspense>
+    <div className="pt-28 md:pt-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      <header>
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-white">Catálogo Online con Precios</h1>
+        <p className="text-slate-300 text-sm sm:text-base mt-1">
+          Buscá por producto, código SKU, marca o rubro. Armá tu pedido y envialo directo por WhatsApp.
+        </p>
+      </header>
+
+      <Suspense
+        fallback={
+          <div className="py-6 space-y-4" role="status">
+            <p className="text-slate-300">Cargando filtros y productos del catálogo...</p>
+            <nav aria-label="Rubros disponibles" className="flex flex-wrap gap-2">
+              {DEFAULT_CATEGORIES.map((cat) => (
+                <Link
+                  key={cat.id}
+                  href={`/catalogo?rubro=${cat.id}`}
+                  className="px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-900 text-slate-200 border border-slate-800"
+                >
+                  {cat.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        }
+      >
+        <CatalogoContent />
+      </Suspense>
+    </div>
   );
 }
