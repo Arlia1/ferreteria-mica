@@ -15,7 +15,7 @@ const nextConfig: NextConfig = {
   async rewrites() {
     const isCloudProduction = Boolean(process.env.VERCEL || process.env.RENDER);
     const defaultBackend = isCloudProduction
-      ? process.env.BACKEND_URL || "http://127.0.0.1:4000"
+      ? process.env.BACKEND_URL || "https://ferreteria-mica.onrender.com"
       : "http://127.0.0.1:4000";
     const rawBackend = process.env.BACKEND_URL || defaultBackend;
     const backendBase = (rawBackend.includes("tu-backend") ? defaultBackend : rawBackend).replace(/\/$/, "");
