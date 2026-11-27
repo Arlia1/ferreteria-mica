@@ -14,15 +14,15 @@ export const STORE_INFO = {
 };
 
 export const DEFAULT_CATEGORIES: CategoryItem[] = [
-  { id: 'herramientas', name: 'Herramientas', description: 'Manuales, eléctricas y a batería', image: '/img/productos/amoladora.jpg' },
-  { id: 'construccion', name: 'Materiales de Construcción', description: 'Hidrófugos, yeso, pegamentos y aislantes', image: '/img/productos/cemento.jpg' },
-  { id: 'buloneria', name: 'Bulonería y Tornillería', description: 'Tornillos, bulones, tuercas, tarugos y anclajes', image: '/img/productos/bulones.jpg' },
-  { id: 'gases', name: 'Oxígeno y Nitrógeno', description: 'Carga en el momento para soldadura y refrigeración', image: '/img/productos/tubo-oxigeno.jpg' },
-  { id: 'sanitarios', name: 'Sanitarios y Plomería', description: 'Caños Awaduct, termofusión, griferías y desagües', image: '/img/productos/cano-pvc.jpg' },
-  { id: 'pinturas', name: 'Pinturas y Membranas', description: 'Látex, sintéticos, membranas y gel con caucho', image: '/img/productos/rodillo.jpg' },
-  { id: 'electricidad', name: 'Materiales Eléctricos', description: 'Cables normalizados, térmicas, disyuntores y LED', image: '/img/productos/termica.jpg' },
-  { id: 'herrajes', name: 'Herrajes y Accesorios', description: 'Cerraduras, candados, selladores y seguridad', image: '/img/productos/candado.jpg' },
-  { id: 'jardineria', name: 'Jardinería y Riego', description: 'Mangueras, acoples, podadoras y palas', image: '/img/productos/manguera.jpg' },
+  { id: 'herramientas', name: 'Herramientas', description: 'Eléctricas, inalámbricas Ronix, llaves Lusqtoff, escaleras y cajas', image: '/img/productos/amoladora.jpg' },
+  { id: 'pinturas', name: 'Pinturas y Enduidos', description: 'Látex Take, convertidores, colores por grupo, enduidos, fijadores, pinceles y rodillos', image: '/img/productos/pintura-latex.jpg' },
+  { id: 'electricidad', name: 'Electricidad e Iluminación', description: 'Cables unipolares/taller, módulos Jeluz y lámparas LED estándar y alta potencia', image: '/img/productos/cable-electrico.jpg' },
+  { id: 'buloneria', name: 'Bulonería y Tornillería', description: 'Tornillos negros drywall #6, #8, #10 y punta mecha por unidad o caja', image: '/img/productos/tornillos.jpg' },
+  { id: 'construccion', name: 'Construcción y Máquinas', description: 'Hormigoneras Duroll, carretillas, andamios, motores, caballetes y telgopor', image: '/img/logo.png' },
+  { id: 'sanitarios', name: 'Sanitarios y Tanques', description: 'Tanques, cisternas y biodigestores Factumplast más accesorios sanitarios', image: '/img/productos/cano-pvc.jpg' },
+  { id: 'gases', name: 'Gases y Refrigeración', description: 'Recargas de nitrógeno, CO2, gases industriales y garrafas refrigerantes', image: '/img/productos/tubo-oxigeno.jpg' },
+  { id: 'herrajes', name: 'Adhesivos y Selladores', description: 'La Gotita, Poxipol, Poxilina, Fastix, Poxirran, Ecole y acero líquido', image: '/img/productos/pegamento.jpg' },
+  { id: 'jardineria', name: 'Jardinería y Palas', description: 'Desmalezadoras, bordeadoras Indeplast y palas forjadas/estampadas Gherardi', image: '/img/productos/desmalezadora.jpg' },
 ];
 
 export const ORDER_STATUS_META: Record<

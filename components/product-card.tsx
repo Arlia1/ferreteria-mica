@@ -50,7 +50,7 @@ export default function ProductCard({ product }: { product: Product }) {
             height={300}
             loading="lazy"
             decoding="async"
-            className="w-full h-full object-cover"
+            className={`w-full h-full ${imgSrc === '/img/logo.png' ? 'object-contain p-5' : 'object-cover'}`}
           />
           <div className="absolute top-2.5 left-2.5 flex flex-wrap gap-1.5">
             <span className="px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wide bg-slate-950/90 text-amber-300 border border-amber-500/40">

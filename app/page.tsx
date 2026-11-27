@@ -248,14 +248,16 @@ export default function HomePage() {
                 className="bg-slate-900 border border-slate-800 hover:border-amber-500/60 rounded-xl p-3.5 flex items-center gap-3.5 transition group min-h-[76px]"
               >
                 <img
-                  src={cat.image || '/img/productos/amoladora.jpg'}
+                  src={cat.image || '/img/logo.png'}
                   alt=""
                   width={64}
                   height={64}
                   loading="lazy"
                   decoding="async"
                   aria-hidden="true"
-                  className="w-16 h-16 rounded-lg object-cover shrink-0 bg-slate-950"
+                  className={`w-16 h-16 rounded-lg shrink-0 bg-slate-950 ${
+                    cat.image === '/img/logo.png' ? 'object-contain p-1.5' : 'object-cover'
+                  }`}
                 />
                 <div className="min-w-0 flex-1">
                   <h3 className="text-lg font-bold text-white group-hover:text-amber-400 transition truncate">

@@ -37,13 +37,15 @@ export default function ServiciosPage() {
               <div>
                 <div className="aspect-[16/9] bg-slate-950 overflow-hidden">
                   <img
-                    src={cat.image || '/img/productos/amoladora.jpg'}
+                    src={cat.image || '/img/logo.png'}
                     alt={cat.name}
                     width={640}
                     height={360}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full ${
+                      cat.image === '/img/logo.png' ? 'object-contain p-8' : 'object-cover'
+                    }`}
                   />
                 </div>
                 <div className="p-5 space-y-2">

@@ -26,3 +26,7 @@ next-env.d.ts
 
 # Local runtime database
 .data/
+
+# Raw catalog scans / archives (kept local only)
+catalogo ferreteria web-*/
+*.zip
