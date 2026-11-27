@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Save, FolderPlus, Lock, CheckCircle2 } from 'lucide-react';
+import { Save, FolderPlus, CheckCircle2 } from 'lucide-react';
 import { CategoryItem, StoreSettings } from '@/lib/types';
-import { apiFetch } from '@/lib/api';
 
 interface SettingsTabProps {
   settings: StoreSettings;
@@ -29,11 +28,6 @@ export default function SettingsTab({
 
   const [newCatName, setNewCatName] = useState('');
   const [newCatDesc, setNewCatDesc] = useState('');
-
-  const [currentPassword, setCurrentPassword] = useState('');
-  const [newPassword, setNewPassword] = useState('');
-  const [passMsg, setPassMsg] = useState('');
-  const [passErr, setPassErr] = useState('');
 
   async function handleSaveSettings(e: React.FormEvent) {
     e.preventDefault();
@@ -72,25 +66,6 @@ export default function SettingsTab({
     });
     setNewCatName('');
     setNewCatDesc('');
-  }
-
-  async function handleChangePassword(e: React.FormEvent) {
-    e.preventDefault();
-    setPassMsg('');
-    setPassErr('');
-    const res = await apiFetch('/api/admin/change-password', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ currentPassword, newPassword }),
-    });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      setPassErr(data.error || 'No se pudo cambiar la contraseña.');
-      return;
-    }
-    setPassMsg('Contraseña actualizada correctamente.');
-    setCurrentPassword('');
-    setNewPassword('');
   }
 
   return (
@@ -249,60 +224,6 @@ export default function SettingsTab({
             className="px-4 py-2.5 min-h-[44px] rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 font-bold text-xs"
           >
             + Agregar Rubro
-          </button>
-        </form>
-
-        <form onSubmit={handleChangePassword} className="bg-slate-900 border border-slate-800 rounded-xl p-6 space-y-4">
-          <h2 className="text-xl font-extrabold text-white flex items-center gap-2">
-            <Lock className="w-5 h-5 text-amber-400" aria-hidden="true" />
-            <span>Seguridad Administrador</span>
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <div>
-              <label htmlFor="pass-current" className="sr-only">
-                Contraseña actual
-              </label>
-              <input
-                id="pass-current"
-                type="password"
-                required
-                placeholder="Contraseña actual"
-                value={currentPassword}
-                onChange={(e) => setCurrentPassword(e.target.value)}
-                className="w-full px-3 py-2 min-h-[44px] rounded-lg bg-slate-950 border border-slate-700 text-white placeholder-slate-400 text-sm"
-              />
-            </div>
-            <div>
-              <label htmlFor="pass-new" className="sr-only">
-                Nueva contraseña
-              </label>
-              <input
-                id="pass-new"
-                type="password"
-                required
-                minLength={6}
-                placeholder="Nueva contraseña (mín. 6)"
-                value={newPassword}
-                onChange={(e) => setNewPassword(e.target.value)}
-                className="w-full px-3 py-2 min-h-[44px] rounded-lg bg-slate-950 border border-slate-700 text-white placeholder-slate-400 text-sm"
-              />
-            </div>
-          </div>
-          {passErr && (
-            <p role="alert" className="text-xs text-rose-300 font-semibold">
-              {passErr}
-            </p>
-          )}
-          {passMsg && (
-            <p role="status" className="text-xs text-emerald-300 font-semibold">
-              {passMsg}
-            </p>
-          )}
-          <button
-            type="submit"
-            className="px-4 py-2.5 min-h-[44px] rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs"
-          >
-            Actualizar Contraseña
           </button>
         </form>
       </div>

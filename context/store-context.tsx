@@ -1,8 +1,9 @@
 'use client';
 
-import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 import seedStore from '@/data/store.json';
 import { apiFetch } from '@/lib/api';
+import { parseProductsCsv } from '@/lib/csv';
 import { DEFAULT_CATEGORIES } from '@/lib/utils';
 import { CategoryItem, Order, OrderStatus, Product, StoreSettings } from '@/lib/types';
 
@@ -24,6 +25,7 @@ interface StoreContextType {
   settings: StoreSettings;
   orders: Order[];
   isLoading: boolean;
+  backendOnline: boolean;
   refreshCatalog: () => Promise<void>;
   refreshOrders: () => Promise<void>;
   addProduct: (product: Omit<Product, 'id'>) => Promise<Product | null>;
@@ -46,6 +48,10 @@ interface StoreContextType {
   addCategory: (category: CategoryItem) => Promise<void>;
 }
 
+const LOCAL_PRODUCTS_KEY = 'mica_local_products_v1';
+const LOCAL_SETTINGS_KEY = 'mica_local_settings_v1';
+const LOCAL_ORDERS_KEY = 'mica_local_orders_v1';
+
 const DEFAULT_SETTINGS: StoreSettings = {
   whatsappNumber: seedStore.settings?.whatsappNumber || '5491157124625',
   deliveryCost: Number(seedStore.settings?.deliveryCost ?? 2500),
@@ -56,6 +62,32 @@ const DEFAULT_SETTINGS: StoreSettings = {
   categories: (seedStore.settings?.categories as CategoryItem[]) || DEFAULT_CATEGORIES,
 };
 
+function readLocalJson<T>(key: string, fallback: T): T {
+  if (typeof window === 'undefined') return fallback;
+  try {
+    const raw = localStorage.getItem(key);
+    if (!raw) return fallback;
+    return JSON.parse(raw) as T;
+  } catch {
+    return fallback;
+  }
+}
+
+function writeLocalJson(key: string, value: unknown): void {
+  if (typeof window === 'undefined') return;
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {}
+}
+
+function roundPriceWithStep(price: number, rounding: 'none' | '10' | '50' | '100' = 'none'): number {
+  const safe = Math.max(0, Number(price || 0));
+  if (rounding === '10') return Math.round(safe / 10) * 10;
+  if (rounding === '50') return Math.round(safe / 50) * 50;
+  if (rounding === '100') return Math.round(safe / 100) * 100;
+  return Math.round(safe);
+}
+
 const StoreContext = createContext<StoreContextType | undefined>(undefined);
 
 export function StoreProvider({ children }: { children: React.ReactNode }) {
@@ -63,22 +95,59 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [settings, setSettings] = useState<StoreSettings>(DEFAULT_SETTINGS);
   const [orders, setOrders] = useState<Order[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [backendOnline, setBackendOnline] = useState(false);
+
+  const productsRef = useRef(products);
+  const settingsRef = useRef(settings);
+  const ordersRef = useRef(orders);
+
+  useEffect(() => {
+    productsRef.current = products;
+  }, [products]);
+
+  useEffect(() => {
+    settingsRef.current = settings;
+  }, [settings]);
+
+  useEffect(() => {
+    ordersRef.current = orders;
+  }, [orders]);
+
+  const commitProducts = useCallback((next: Product[]) => {
+    productsRef.current = next;
+    setProducts(next);
+    writeLocalJson(LOCAL_PRODUCTS_KEY, next);
+  }, []);
+
+  const commitSettings = useCallback((next: StoreSettings) => {
+    settingsRef.current = next;
+    setSettings(next);
+    writeLocalJson(LOCAL_SETTINGS_KEY, next);
+  }, []);
+
+  const commitOrders = useCallback((next: Order[]) => {
+    ordersRef.current = next;
+    setOrders(next);
+    writeLocalJson(LOCAL_ORDERS_KEY, next);
+  }, []);
 
   const refreshCatalog = useCallback(async () => {
+    let loadedFromBackend = false;
     try {
       const [prodRes, setRes] = await Promise.all([
         apiFetch('/api/products'),
         apiFetch('/api/settings'),
       ]);
       if (prodRes.ok) {
-        const data = await prodRes.json();
-        if (Array.isArray(data.products)) {
+        const data = await prodRes.json().catch(() => null);
+        if (data && Array.isArray(data.products)) {
+          loadedFromBackend = true;
           setProducts(data.products);
         }
       }
       if (setRes.ok) {
-        const data = await setRes.json();
-        if (data.settings) {
+        const data = await setRes.json().catch(() => null);
+        if (data?.settings) {
           setSettings((prev) => ({
             ...prev,
             ...data.settings,
@@ -90,8 +159,26 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         }
       }
     } catch {
-      // Fallback silencioso a datos locales seed si el backend no responde aun
+      // Sin backend: continuamos con datos seed + cambios guardados localmente
     } finally {
+      setBackendOnline(loadedFromBackend);
+      if (!loadedFromBackend) {
+        const localProds = readLocalJson<Product[] | null>(LOCAL_PRODUCTS_KEY, null);
+        if (Array.isArray(localProds) && localProds.length > 0) {
+          setProducts(localProds);
+        }
+        const localSettings = readLocalJson<Partial<StoreSettings> | null>(LOCAL_SETTINGS_KEY, null);
+        if (localSettings) {
+          setSettings((prev) => ({
+            ...prev,
+            ...localSettings,
+            categories:
+              Array.isArray(localSettings.categories) && localSettings.categories.length > 0
+                ? localSettings.categories
+                : prev.categories,
+          }));
+        }
+      }
       setIsLoading(false);
     }
   }, []);
@@ -100,104 +187,195 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     try {
       const res = await apiFetch('/api/pedidos');
       if (res.ok) {
-        const data = await res.json();
-        if (Array.isArray(data.pedidos)) {
+        const data = await res.json().catch(() => null);
+        if (data && Array.isArray(data.pedidos)) {
           setOrders(data.pedidos);
+          return;
         }
       }
     } catch {}
+    const localOrders = readLocalJson<Order[]>(LOCAL_ORDERS_KEY, []);
+    if (Array.isArray(localOrders) && localOrders.length > 0) {
+      setOrders(localOrders);
+    }
   }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       void refreshCatalog();
+      void refreshOrders();
     }, 0);
     return () => clearTimeout(timer);
-  }, [refreshCatalog]);
+  }, [refreshCatalog, refreshOrders]);
 
-  const addProduct = useCallback(async (product: Omit<Product, 'id'>): Promise<Product | null> => {
-    const res = await apiFetch('/api/products', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(product),
-    });
-    if (!res.ok) {
-      const err = await res.json().catch(() => ({}));
-      throw new Error(err.error || 'No se pudo crear el producto');
-    }
-    const data = await res.json();
-    if (data.product) {
-      setProducts((prev) => [data.product, ...prev]);
-      return data.product;
-    }
-    return null;
-  }, []);
+  const addProduct = useCallback(
+    async (product: Omit<Product, 'id'>): Promise<Product | null> => {
+      try {
+        const res = await apiFetch('/api/products', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(product),
+        });
+        if (res.ok) {
+          const data = await res.json().catch(() => null);
+          if (data?.product) {
+            commitProducts([data.product, ...productsRef.current]);
+            return data.product;
+          }
+        }
+      } catch {}
 
-  const updateProduct = useCallback(async (product: Product): Promise<Product | null> => {
-    const res = await apiFetch('/api/products', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(product),
-    });
-    if (!res.ok) {
-      const err = await res.json().catch(() => ({}));
-      throw new Error(err.error || 'No se pudo actualizar el producto');
-    }
-    const data = await res.json();
-    if (data.product) {
-      setProducts((prev) => prev.map((p) => (p.id === data.product.id ? data.product : p)));
-      return data.product;
-    }
-    return null;
-  }, []);
+      const localProduct: Product = {
+        ...product,
+        id: `prod-local-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 6)}`,
+        updatedAt: new Date().toISOString(),
+      };
+      commitProducts([localProduct, ...productsRef.current]);
+      return localProduct;
+    },
+    [commitProducts]
+  );
 
-  const deleteProduct = useCallback(async (id: string): Promise<boolean> => {
-    const res = await apiFetch(`/api/products?id=${encodeURIComponent(id)}`, { method: 'DELETE' });
-    if (!res.ok) return false;
-    setProducts((prev) => prev.filter((p) => p.id !== id));
-    return true;
-  }, []);
+  const updateProduct = useCallback(
+    async (product: Product): Promise<Product | null> => {
+      try {
+        const res = await apiFetch('/api/products', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(product),
+        });
+        if (res.ok) {
+          const data = await res.json().catch(() => null);
+          if (data?.product) {
+            commitProducts(productsRef.current.map((p) => (p.id === data.product.id ? data.product : p)));
+            return data.product;
+          }
+        }
+      } catch {}
+
+      const updated: Product = { ...product, updatedAt: new Date().toISOString() };
+      commitProducts(productsRef.current.map((p) => (p.id === updated.id ? updated : p)));
+      return updated;
+    },
+    [commitProducts]
+  );
+
+  const deleteProduct = useCallback(
+    async (id: string): Promise<boolean> => {
+      try {
+        const res = await apiFetch(`/api/products?id=${encodeURIComponent(id)}`, { method: 'DELETE' });
+        if (res.ok) {
+          commitProducts(productsRef.current.filter((p) => p.id !== id));
+          return true;
+        }
+      } catch {}
+
+      commitProducts(productsRef.current.filter((p) => p.id !== id));
+      return true;
+    },
+    [commitProducts]
+  );
 
   const updateProductStock = useCallback(
     async (productId: string, payload: { variantId?: string; inStock?: boolean; stockQuantity?: number }) => {
-      const res = await apiFetch('/api/stock', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ productId, ...payload }),
-      });
-      if (res.ok) {
-        const data = await res.json();
-        if (data.product) {
-          setProducts((prev) => prev.map((p) => (p.id === data.product.id ? data.product : p)));
+      try {
+        const res = await apiFetch('/api/stock', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ productId, ...payload }),
+        });
+        if (res.ok) {
+          const data = await res.json().catch(() => null);
+          if (data?.product) {
+            commitProducts(productsRef.current.map((p) => (p.id === data.product.id ? data.product : p)));
+            return;
+          }
         }
-      }
+      } catch {}
+
+      const next = productsRef.current.map((p) => {
+        if (p.id !== productId) return p;
+        if (payload.variantId && Array.isArray(p.variants)) {
+          const variants = p.variants.map((v) => {
+            if (v.id !== payload.variantId) return v;
+            const qty = payload.stockQuantity !== undefined ? Math.max(0, payload.stockQuantity) : v.stockQuantity;
+            const inStock = payload.inStock !== undefined ? payload.inStock : qty > 0;
+            return { ...v, stockQuantity: qty, inStock };
+          });
+          const totalQty = variants.reduce((sum, v) => sum + Number(v.stockQuantity || 0), 0);
+          return {
+            ...p,
+            variants,
+            stockQuantity: totalQty,
+            inStock: variants.some((v) => v.inStock),
+            updatedAt: new Date().toISOString(),
+          };
+        }
+        const qty = payload.stockQuantity !== undefined ? Math.max(0, payload.stockQuantity) : p.stockQuantity;
+        const inStock = payload.inStock !== undefined ? payload.inStock : qty > 0;
+        return { ...p, stockQuantity: qty, inStock, updatedAt: new Date().toISOString() };
+      });
+      commitProducts(next);
     },
-    []
+    [commitProducts]
   );
 
-  const bulkImportCsv = useCallback(async (csvText: string): Promise<BulkImportResponse> => {
-    const res = await apiFetch('/api/products/bulk-import', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ csvText }),
-    });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      throw new Error(data.error || 'Error importando archivo CSV');
-    }
-    if (Array.isArray(data.products)) {
-      setProducts(data.products);
-    }
-    if (Array.isArray(data.categories)) {
-      setSettings((prev) => ({ ...prev, categories: data.categories }));
-    }
-    return {
-      success: Boolean(data.success),
-      created: Number(data.created || 0),
-      updated: Number(data.updated || 0),
-      errors: Array.isArray(data.errors) ? data.errors : [],
-    };
-  }, []);
+  const bulkImportCsv = useCallback(
+    async (csvText: string): Promise<BulkImportResponse> => {
+      try {
+        const res = await apiFetch('/api/products/bulk-import', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ csvText }),
+        });
+        if (res.ok) {
+          const data = await res.json().catch(() => null);
+          if (data) {
+            if (Array.isArray(data.products)) commitProducts(data.products);
+            if (Array.isArray(data.categories)) {
+              commitSettings({ ...settingsRef.current, categories: data.categories });
+            }
+            return {
+              success: Boolean(data.success),
+              created: Number(data.created || 0),
+              updated: Number(data.updated || 0),
+              errors: Array.isArray(data.errors) ? data.errors : [],
+            };
+          }
+        }
+      } catch {}
+
+      const { rows, errors } = parseProductsCsv(csvText);
+      const next = [...productsRef.current];
+      let created = 0;
+      let updated = 0;
+
+      for (const row of rows) {
+        const existingIndex = next.findIndex(
+          (p) => (row.sku && p.sku?.toLowerCase() === row.sku.toLowerCase()) || p.name.toLowerCase() === row.name.toLowerCase()
+        );
+        if (existingIndex >= 0) {
+          next[existingIndex] = {
+            ...next[existingIndex],
+            ...row,
+            updatedAt: new Date().toISOString(),
+          };
+          updated += 1;
+        } else {
+          next.unshift({
+            ...row,
+            id: `prod-csv-${Date.now().toString(36)}-${created}`,
+            updatedAt: new Date().toISOString(),
+          });
+          created += 1;
+        }
+      }
+
+      commitProducts(next);
+      return { success: true, created, updated, errors };
+    },
+    [commitProducts, commitSettings]
+  );
 
   const bulkUpdatePrices = useCallback(
     async (payload: {
@@ -206,77 +384,149 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       brand?: string;
       rounding?: 'none' | '10' | '50' | '100';
     }): Promise<BulkPriceResponse> => {
-      const res = await apiFetch('/api/products/bulk-price-update', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
+      try {
+        const res = await apiFetch('/api/products/bulk-price-update', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (res.ok) {
+          const data = await res.json().catch(() => null);
+          if (data) {
+            if (Array.isArray(data.products)) commitProducts(data.products);
+            return {
+              success: Boolean(data.success),
+              updatedCount: Number(data.updatedCount || 0),
+            };
+          }
+        }
+      } catch {}
+
+      const factor = 1 + Number(payload.percent || 0) / 100;
+      let updatedCount = 0;
+      const next = productsRef.current.map((p) => {
+        const catOk = !payload.category || payload.category === 'todos' || p.category === payload.category;
+        const brandOk = !payload.brand || payload.brand === 'todas' || p.brand === payload.brand;
+        if (!catOk || !brandOk || p.priceOnRequest) return p;
+
+        updatedCount += 1;
+        const variants = Array.isArray(p.variants)
+          ? p.variants.map((v) => ({
+              ...v,
+              price: roundPriceWithStep(v.price * factor, payload.rounding),
+            }))
+          : p.variants;
+
+        return {
+          ...p,
+          price: roundPriceWithStep(p.price * factor, payload.rounding),
+          variants,
+          updatedAt: new Date().toISOString(),
+        };
       });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        throw new Error(data.error || 'No se pudo aplicar el aumento masivo');
-      }
-      if (Array.isArray(data.products)) {
-        setProducts(data.products);
-      }
-      return {
-        success: Boolean(data.success),
-        updatedCount: Number(data.updatedCount || 0),
-      };
+
+      commitProducts(next);
+      return { success: true, updatedCount };
     },
-    []
+    [commitProducts]
   );
 
-  const createOrder = useCallback(async (orderPayload: Partial<Order>): Promise<Order | null> => {
-    const res = await apiFetch('/api/pedidos', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(orderPayload),
-    });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      throw new Error(data.error || 'No se pudo registrar el pedido');
-    }
-    if (data.pedido) {
-      setOrders((prev) => [data.pedido, ...prev]);
-      return data.pedido;
-    }
-    return null;
-  }, []);
+  const createOrder = useCallback(
+    async (orderPayload: Partial<Order>): Promise<Order | null> => {
+      try {
+        const res = await apiFetch('/api/pedidos', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(orderPayload),
+        });
+        if (res.ok) {
+          const data = await res.json().catch(() => null);
+          if (data?.pedido) {
+            commitOrders([data.pedido, ...ordersRef.current]);
+            return data.pedido;
+          }
+        }
+      } catch {}
 
-  const updateOrderStatus = useCallback(async (id: string, status: OrderStatus, deliveryNotes?: string) => {
-    const res = await apiFetch(`/api/pedidos/${encodeURIComponent(id)}`, {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ status, ...(deliveryNotes !== undefined ? { deliveryNotes } : {}) }),
-    });
-    if (res.ok) {
-      const data = await res.json();
-      if (data.pedido) {
-        setOrders((prev) => prev.map((o) => (o.id === id ? data.pedido : o)));
-      }
-    }
-  }, []);
+      const localOrder: Order = {
+        id: orderPayload.id || `FM-${Date.now().toString(36).toUpperCase().slice(-4)}`,
+        createdAt: orderPayload.createdAt || new Date().toISOString(),
+        customerName: orderPayload.customerName || 'Cliente',
+        customerPhone: orderPayload.customerPhone || '',
+        orderType: orderPayload.orderType || 'delivery',
+        deliveryAddress: orderPayload.deliveryAddress || '',
+        deliveryNotes: orderPayload.deliveryNotes || '',
+        paymentMethod: orderPayload.paymentMethod || 'efectivo',
+        items: orderPayload.items || [],
+        subtotal: Number(orderPayload.subtotal || 0),
+        deliveryCost: Number(orderPayload.deliveryCost || 0),
+        total: Number(orderPayload.total || 0),
+        hasConsultItems: Boolean(orderPayload.hasConsultItems),
+        status: 'pendiente',
+        whatsappMessage: orderPayload.whatsappMessage || '',
+      };
+      commitOrders([localOrder, ...ordersRef.current]);
+      return localOrder;
+    },
+    [commitOrders]
+  );
 
-  const updateSettings = useCallback(async (newSettings: Partial<StoreSettings>) => {
-    const res = await apiFetch('/api/settings', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(newSettings),
-    });
-    if (res.ok) {
-      const data = await res.json();
-      if (data.settings) {
-        setSettings(data.settings);
-      }
-    }
-  }, []);
+  const updateOrderStatus = useCallback(
+    async (id: string, status: OrderStatus, deliveryNotes?: string) => {
+      try {
+        const res = await apiFetch(`/api/pedidos/${encodeURIComponent(id)}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status, ...(deliveryNotes !== undefined ? { deliveryNotes } : {}) }),
+        });
+        if (res.ok) {
+          const data = await res.json().catch(() => null);
+          if (data?.pedido) {
+            commitOrders(ordersRef.current.map((o) => (o.id === id ? data.pedido : o)));
+            return;
+          }
+        }
+      } catch {}
+
+      commitOrders(
+        ordersRef.current.map((o) =>
+          o.id === id
+            ? { ...o, status, ...(deliveryNotes !== undefined ? { deliveryNotes } : {}) }
+            : o
+        )
+      );
+    },
+    [commitOrders]
+  );
+
+  const updateSettings = useCallback(
+    async (newSettings: Partial<StoreSettings>) => {
+      try {
+        const res = await apiFetch('/api/settings', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newSettings),
+        });
+        if (res.ok) {
+          const data = await res.json().catch(() => null);
+          if (data?.settings) {
+            commitSettings(data.settings);
+            return;
+          }
+        }
+      } catch {}
+
+      commitSettings({ ...settingsRef.current, ...newSettings });
+    },
+    [commitSettings]
+  );
 
   const addCategory = useCallback(
     async (category: CategoryItem) => {
-      const nextCategories = [...settings.categories, category];
+      const nextCategories = [...settingsRef.current.categories, category];
       await updateSettings({ categories: nextCategories });
     },
-    [settings.categories, updateSettings]
+    [updateSettings]
   );
 
   return (
@@ -287,6 +537,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         settings,
         orders,
         isLoading,
+        backendOnline,
         refreshCatalog,
         refreshOrders,
         addProduct,

@@ -1,19 +1,15 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import {
-  Lock,
-  LogOut,
   ShoppingBag,
   Boxes,
   FileSpreadsheet,
   Settings,
   ExternalLink,
-  Loader2,
 } from 'lucide-react';
 import { useStore } from '@/context/store-context';
-import { apiFetch, setAdminToken } from '@/lib/api';
 import OrdersTab from '@/components/admin/orders-tab';
 import CatalogTab from '@/components/admin/catalog-tab';
 import BulkTab from '@/components/admin/bulk-tab';
@@ -27,8 +23,8 @@ export default function AdminPage() {
     categories,
     settings,
     orders,
+    backendOnline,
     refreshOrders,
-    refreshCatalog,
     addProduct,
     updateProduct,
     deleteProduct,
@@ -40,148 +36,7 @@ export default function AdminPage() {
     addCategory,
   } = useStore();
 
-  const [authLoading, setAuthLoading] = useState(true);
-  const [authenticated, setAuthenticated] = useState(false);
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('');
-  const [loginError, setLoginError] = useState('');
-  const [loggingIn, setLoggingIn] = useState(false);
-  const [activeTab, setActiveTab] = useState<AdminTab>('comandas');
-
-  useEffect(() => {
-    async function checkAuth() {
-      try {
-        const res = await apiFetch('/api/admin/auth');
-        if (res.ok) {
-          setAuthenticated(true);
-          await Promise.all([refreshOrders(), refreshCatalog()]);
-        }
-      } catch {
-      } finally {
-        setAuthLoading(false);
-      }
-    }
-    checkAuth();
-  }, [refreshOrders, refreshCatalog]);
-
-  async function handleLogin(e: React.FormEvent) {
-    e.preventDefault();
-    setLoginError('');
-    setLoggingIn(true);
-    try {
-      const res = await apiFetch('/api/admin/auth', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username: username.trim(), password }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        setLoginError(data.error || 'Credenciales incorrectas');
-        return;
-      }
-      if (data.token) setAdminToken(data.token);
-      setAuthenticated(true);
-      await Promise.all([refreshOrders(), refreshCatalog()]);
-    } catch {
-      setLoginError('No se pudo conectar con el servidor backend (puerto 4000).');
-    } finally {
-      setLoggingIn(false);
-    }
-  }
-
-  async function handleLogout() {
-    await apiFetch('/api/admin/auth', { method: 'DELETE' }).catch(() => {});
-    setAdminToken(null);
-    setAuthenticated(false);
-    setPassword('');
-  }
-
-  if (authLoading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-950 text-slate-300 gap-2" role="status">
-        <Loader2 className="w-5 h-5 animate-spin text-amber-400" aria-hidden="true" />
-        <span>Verificando sesión de administrador...</span>
-      </div>
-    );
-  }
-
-  if (!authenticated) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-950 px-4">
-        <div className="w-full max-w-md bg-slate-900 border border-slate-800 rounded-xl p-8 shadow-2xl space-y-6">
-          <div className="text-center space-y-2">
-            <img
-              src="/img/logo.png"
-              alt="Ferretería Mica"
-              width={96}
-              height={48}
-              className="w-24 h-12 object-contain mx-auto"
-            />
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-amber-500/15 text-amber-300 text-xs font-bold">
-              <Lock className="w-3.5 h-3.5" aria-hidden="true" />
-              <span>Panel Administrativo</span>
-            </div>
-            <h1 className="text-2xl font-extrabold text-white">Ingreso Ferretería Mica</h1>
-            <p className="text-xs text-slate-300">
-              Gestioná comandas, precios, stock e importación de planillas.
-            </p>
-          </div>
-
-          <form onSubmit={handleLogin} noValidate className="space-y-4">
-            <div>
-              <label htmlFor="admin-username" className="block text-xs font-semibold text-slate-300 mb-1">
-                Usuario
-              </label>
-              <input
-                id="admin-username"
-                type="text"
-                required
-                autoComplete="username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className="w-full px-3.5 py-2.5 min-h-[44px] rounded-lg bg-slate-950 border border-slate-700 text-white text-sm"
-              />
-            </div>
-            <div>
-              <label htmlFor="admin-password" className="block text-xs font-semibold text-slate-300 mb-1">
-                Contraseña
-              </label>
-              <input
-                id="admin-password"
-                type="password"
-                required
-                autoComplete="current-password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Ingresá tu contraseña"
-                className="w-full px-3.5 py-2.5 min-h-[44px] rounded-lg bg-slate-950 border border-slate-700 text-white placeholder-slate-400 text-sm"
-              />
-            </div>
-
-            {loginError && (
-              <p role="alert" className="text-xs font-semibold text-rose-200 bg-rose-950/70 border border-rose-500/40 rounded-lg px-3 py-2">
-                {loginError}
-              </p>
-            )}
-
-            <button
-              type="submit"
-              disabled={loggingIn}
-              className="w-full min-h-[44px] py-3 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-sm transition"
-            >
-              {loggingIn ? 'Ingresando...' : 'Entrar al Panel'}
-            </button>
-          </form>
-
-          <div className="text-center pt-2">
-            <Link href="/" className="text-xs text-slate-300 hover:text-amber-400 inline-block py-2">
-              Volver a la tienda pública
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const [activeTab, setActiveTab] = useState<AdminTab>('catalogo');
 
   const tabs: Array<{ id: AdminTab; label: string; icon: React.ReactNode; badge?: number }> = [
     {
@@ -216,23 +71,22 @@ export default function AdminPage() {
           </div>
 
           <div className="flex items-center gap-2">
+            <span
+              className={`hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[11px] font-bold border ${
+                backendOnline
+                  ? 'bg-emerald-950/60 text-emerald-300 border-emerald-500/40'
+                  : 'bg-slate-800 text-amber-300 border-slate-700'
+              }`}
+            >
+              {backendOnline ? 'Backend conectado' : 'Acceso directo (sin backend)'}
+            </span>
             <Link
               href="/catalogo"
-              target="_blank"
-              rel="noopener noreferrer"
               className="px-3.5 py-2 min-h-[44px] rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-100 text-xs font-semibold inline-flex items-center gap-1.5"
             >
-              <span>Ver Tienda</span>
+              <span>Ver Catálogo</span>
               <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
             </Link>
-            <button
-              type="button"
-              onClick={handleLogout}
-              className="px-3.5 py-2 min-h-[44px] rounded-lg bg-rose-950/70 hover:bg-rose-900/70 text-rose-200 border border-rose-500/40 text-xs font-semibold inline-flex items-center gap-1.5"
-            >
-              <LogOut className="w-3.5 h-3.5" aria-hidden="true" />
-              <span className="hidden sm:inline">Salir</span>
-            </button>
           </div>
         </div>
       </header>
