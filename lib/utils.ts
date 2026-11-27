@@ -147,7 +147,7 @@ export function getCategoryMeta(categoryId: string, categories: CategoryItem[] =
     DEFAULT_CATEGORIES.find((c) => c.id === categoryId) || {
       id: categoryId,
       name: categoryId.charAt(0).toUpperCase() + categoryId.slice(1).replace(/-/g, ' '),
-      image: '/img/Herramientas4.webp',
+      image: '/img/productos/amoladora.jpg',
     }
   );
 }

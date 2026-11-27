@@ -1115,7 +1115,7 @@ const isMainModule =
 if (isMainModule) {
   const PORT = parseInt(process.env.BACKEND_PORT || process.env.PORT || '4000', 10);
   const server = createBackendApp();
-  server.listen(PORT, () => {
+  server.listen(PORT, '0.0.0.0', () => {
     console.log('=======================================================');
     console.log('  FERRETERIA MICA - BACKEND REST API ACTIVO            ');
     console.log(`  Puerto: http://127.0.0.1:${PORT}                     `);

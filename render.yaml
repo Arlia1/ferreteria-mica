@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: ferreteria-mica-backend
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm run backend
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_USER
+        value: admin
+      - key: ADMIN_PASSWORD
+        value: mica2026
+      - key: ADMIN_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        value: https://ferreteria-mica.vercel.app,https://ferreteria-mica-cs65.vercel.app
+      # Opcional para persistencia permanente en Render Free (agregar en Dashboard -> Environment):
+      # - SUPABASE_URL
+      # - SUPABASE_SERVICE_ROLE_KEY
